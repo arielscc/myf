@@ -14,7 +14,7 @@ import heroimage from '../assets/hero.svg';
 const Hero = () => {
   return (
     <chakra.header
-      h="100vh"
+      h="80vh"
       w="full"
       bg="gray.50"
       bgGradient={useColorModeValue(
@@ -22,7 +22,7 @@ const Hero = () => {
         'linear(to-tr, purple.900, #1b283d, #1b283d )'
       )}
     >
-      <HStack h="100vh" w="8xl" px="24" m="auto" justify="space-between">
+      <HStack h="full" w="8xl" px="24" m="auto" justify="space-between">
         <VStack
           align="flex-start"
           fontFamily="montse"

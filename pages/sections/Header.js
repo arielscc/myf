@@ -10,7 +10,13 @@ import {
   chakra,
 } from '@chakra-ui/react';
 import React from 'react';
-import { FaSun, FaMoon, FaGithub } from 'react-icons/fa';
+import {
+  FaSun,
+  FaMoon,
+  FaGithub,
+  FaTwitter,
+  FaInstagram,
+} from 'react-icons/fa';
 
 const Header = () => {
   const ColorModeIcon = useColorModeValue(FaMoon, FaSun);
@@ -24,8 +30,9 @@ const Header = () => {
       transitionDelay=".08s"
       w="full"
       position="fixed"
+      zIndex="banner"
     >
-      <HStack w="7xl" justify="space-between" p="4">
+      <HStack w="7xl" justify="space-between" py="4">
         <Text fontSize="lg" fontWeight="bold" fontFamily="jet">
           ArielChura
         </Text>
@@ -61,14 +68,7 @@ const Header = () => {
               contact Me
             </Button>
           </ButtonGroup>
-          <ButtonGroup>
-            <IconButton
-              rounded="md"
-              variant="primary"
-              size="md"
-              icon={<ColorModeIcon />}
-              onClick={toggleColorMode}
-            />
+          <ButtonGroup spacing="1">
             <IconButton
               rounded="md"
               fontSize="2xl"
@@ -76,7 +76,28 @@ const Header = () => {
               size="md"
               icon={<FaGithub />}
             />
+            <IconButton
+              rounded="md"
+              fontSize="2xl"
+              variant="primary"
+              size="md"
+              icon={<FaTwitter />}
+            />
+            <IconButton
+              rounded="md"
+              fontSize="2xl"
+              variant="primary"
+              size="md"
+              icon={<FaInstagram />}
+            />
           </ButtonGroup>
+          <IconButton
+            rounded="md"
+            variant="primary"
+            size="md"
+            icon={<ColorModeIcon />}
+            onClick={toggleColorMode}
+          />
         </chakra.nav>
       </HStack>
     </Flex>

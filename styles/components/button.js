@@ -11,6 +11,7 @@ export const Button = {
       color: mode('white', 'cyan')(props),
       py: '2',
       px: '4',
+      fontSize: 'md',
       _hover: {
         bg: mode(whiten('third', 0), darken('gray.600', 15))(props),
       },
