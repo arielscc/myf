@@ -18,28 +18,31 @@ import {
   FaInstagram,
 } from 'react-icons/fa';
 
-const Header = () => {
+const Header = ({ inview }) => {
   const ColorModeIcon = useColorModeValue(FaMoon, FaSun);
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { toggleColorMode } = useColorMode();
+  const lightvalue = inview ? 'rgba(255,255,255,0.2)' : '#2C73D2';
+  const darkvalue = inview ? 'rgba(26, 32, 44, .6)' : 'gray.800';
   return (
     <Flex
       justifyContent="center"
       bgAttachment="scroll"
-      bg={useColorModeValue('rgba(255,255,255,0.2)', 'rgba(26, 32, 44, .2)')}
+      bg={useColorModeValue(lightvalue, darkvalue)}
+      transition=".2s"
       shadow="md"
       transitionDelay=".08s"
       w="full"
       position="fixed"
       zIndex="banner"
     >
-      <HStack w="7xl" justify="space-between" py="4">
+      <HStack w="5xl" justify="space-between" py="4">
         <Text fontSize="lg" fontWeight="bold" fontFamily="jet">
           ArielChura
         </Text>
-        <chakra.nav display="flex" gridGap="4">
+        <chakra.nav display="flex">
           <ButtonGroup
             variant="ghost"
-            spacing="2"
+            spacing="1"
             fontFamily="jet"
             fontWeight="500"
             _focus={{

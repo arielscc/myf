@@ -1,4 +1,6 @@
-import { Box, useColorModeValue, VStack } from '@chakra-ui/react';
+import React from 'react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
+import { useInView } from 'react-intersection-observer';
 import About from './sections/About';
 import Education from './sections/Education';
 import Experience from './sections/Experience';
@@ -10,6 +12,9 @@ import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
 export default function Home() {
+  const { ref, inView } = useInView({
+    threshold: 0.13,
+  });
   return (
     <Box
       bg={useColorModeValue('white', '#1b283d')}
@@ -19,8 +24,8 @@ export default function Home() {
       fontSize="lg"
       fontWeight="400"
     >
-      <Header />
-      <Hero />
+      <Header inview={inView} />
+      <Hero referencie={ref} />
       <About />
       <Education />
       <Skills />

@@ -9,9 +9,8 @@ export const Button = {
   variants: {
     primary: props => ({
       color: mode('white', 'cyan')(props),
-      py: '2',
-      px: '4',
-      fontSize: 'md',
+      px: '2',
+      fontSize: 'sm',
       _hover: {
         bg: mode(whiten('third', 0), darken('gray.600', 15))(props),
       },
@@ -26,7 +25,6 @@ export const Button = {
       bg: 'tomato',
       w: 'full',
       rounded: 'full',
-      shadow: 'xl',
       _hover: {
         bg: mode(whiten('tomato', 20), darken('tomato', 10))(props),
         shadow: 'lg',

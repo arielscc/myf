@@ -33,9 +33,10 @@ const Project = ({ data, index }) => {
     >
       <VStack
         w="lg"
-        zIndex="overlay"
+        zIndex="docked"
         spacing="5"
         alignItems={position === 'left' ? 'flex-start' : 'flex-end'}
+        textAlign={position === 'left' ? 'left' : 'right'}
       >
         <Box p="4">
           <chakra.span fontSize="md" fontFamily="jet">
@@ -51,7 +52,10 @@ const Project = ({ data, index }) => {
           border="1px"
           borderColor={useColorModeValue('gray.200', 'gray.600')}
         >
-          <Text fontSize="md" textAlign="left">
+          <Text
+            fontSize="md"
+            textAlign={position === 'left' ? 'left' : 'right'}
+          >
             {description}
           </Text>
         </Box>
