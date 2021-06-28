@@ -3,14 +3,10 @@ import {
   Box,
   Heading,
   chakra,
-  HStack,
   Text,
-  useColorModeValue,
-  Flex,
   Link,
   Collapse,
   Button,
-  SimpleGrid,
   Grid,
   GridItem,
   TabList,
@@ -18,13 +14,12 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Wrap,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { SiPlatzi, SiUdemy } from 'react-icons/si';
 import { FaUniversity } from 'react-icons/fa';
 import image from '../assets/platzi/img3.jpg';
 import Certified from '../components/Certified';
+
 const Education = () => {
   const data = [
     {
