@@ -14,6 +14,7 @@ const Navigator = ({ children, title, position }) => (
     border="1px"
     borderColor={useColorModeValue('gray.200', 'gray.500')}
   >
+    <Box w="full" h="full" bg="gray.200" rotate="ltr" />
     <HStack
       p="2"
       bg={useColorModeValue('gray.100', 'gray.600')}

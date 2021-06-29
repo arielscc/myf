@@ -21,7 +21,7 @@ const Header = ({ inview }) => {
   const { toggleColorMode } = useColorMode();
   const lightvalue = inview ? 'rgba(255,255,255,0.1)' : '#000032';
   const darkvalue = inview ? 'rgba(26, 32, 44, .7)' : 'gray.800';
-  const padding = inview ? '4' : '1';
+  const padding = inview ? '4' : '2';
   return (
     <HStack
       as="nav"
@@ -43,7 +43,6 @@ const Header = ({ inview }) => {
           variant="ghost"
           spacing="1"
           fontFamily="jet"
-          fontWeight="500"
           size="sm"
           _focus={{
             outlineColor: 'white',
@@ -97,7 +96,7 @@ const Header = ({ inview }) => {
         <IconButton
           rounded="md"
           variant="primary"
-          size="md"
+          size="xs"
           icon={<ColorModeIcon />}
           onClick={toggleColorMode}
         />

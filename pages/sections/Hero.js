@@ -31,24 +31,27 @@ const Hero = ({ referencie }) => (
         fontFamily="montse"
         color="white"
         alignSelf="self-start"
-        my="40"
+        mt="40"
       >
         <chakra.span fontFamily="jet" color="tomato">
           👋🏻 Hi, my name is
         </chakra.span>
-        <Heading fontSize="8xl" dropShadow="md" lineHeight="50px">
-          Ariel Chura
-        </Heading>
-        <Text fontSize="xl" fontWeight="300" pt="5">
-          Front-end developer
+        <Heading fontSize="8xl">Ariel Chura</Heading>
+        <Text fontSize="lg" w="xl" pb="5">
+          I&apos;m computer science degree with mention in Systems Engineering.
+          I specialize in building (and occasionally designing) exceptional
+          digital experiences and building accessible human-centered products.
+          Currently, I&apos;m looking for professional growth opportunities as a
+          frontend developer.
         </Text>
         <Button
           leftIcon={<FaDownload />}
           variant="secondary"
           textTransform="capitalize"
-          w="sm"
+          w="xs"
+          mt="12"
         >
-          download cv
+          download resume
         </Button>
       </VStack>
       <Box alignSelf="flex-end">
