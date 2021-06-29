@@ -29,7 +29,7 @@ const Hero = ({ referencie }) => {
     >
       <Flex
         direction={{ base: 'column', lg: 'row' }}
-        justifyContent="space-between"
+        justifyContent={{ base: 'center', lg: 'space-between' }}
         h="full"
         maxW="8xl"
         m="auto"
@@ -44,7 +44,6 @@ const Hero = ({ referencie }) => {
           </Heading>
           <Text
             maxW={['full', 'full', '2xl']}
-            pb="5"
             textAlign={{ base: 'justify', md: 'left' }}
           >
             I&apos;m computer science degree with mention in Systems
@@ -58,7 +57,6 @@ const Hero = ({ referencie }) => {
             variant="secondary"
             textTransform="capitalize"
             w={{ base: 'full', lg: 'xs' }}
-            mt="12"
           >
             download resume
           </Button>

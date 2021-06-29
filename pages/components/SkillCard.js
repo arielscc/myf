@@ -1,20 +1,17 @@
-import { WrapItem, Text, useColorModeValue } from '@chakra-ui/react';
+import { GridItem, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 
 const SkillCard = ({ item }) => {
-  const { title, Icon } = item;
+  const { title, Icon: Icono } = item;
   return (
-    <WrapItem
+    <GridItem
       key={title}
       border="1px"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="space-between"
       borderColor={useColorModeValue('gray.200', 'gray.600')}
       bg={useColorModeValue('white', 'gray.700')}
-      p="4"
-      maxW="32"
-      h="32"
+      maxW={['20', '32']}
+      maxH={['20', '32']}
+      py={['3', '4']}
       w="full"
       boxShadow="md"
       rounded="lg"
@@ -23,10 +20,13 @@ const SkillCard = ({ item }) => {
         boxShadow: 'none',
         transition: '1s',
       }}
+      textAlign="center"
     >
-      <Icon size="50" bag={useColorModeValue('#2D3748', '#F7FAFC')} wi="50" />
-      <Text>{title}</Text>
-    </WrapItem>
+      <Icon as={Icono} boxSize="50%" />
+      <Text fontSize={['xs', 'xs', 'sm', 'inherit']} mt={['2', '4']}>
+        {title}
+      </Text>
+    </GridItem>
   );
 };
 

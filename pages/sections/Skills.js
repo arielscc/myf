@@ -1,9 +1,6 @@
 import React from 'react';
 import {
-  Box,
   Text,
-  Heading,
-  chakra,
   Tabs,
   TabList,
   Tab,
@@ -11,7 +8,7 @@ import {
   TabPanel,
   Wrap,
   useColorModeValue,
-  WrapItem,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import {
   DiCss3,
@@ -19,7 +16,6 @@ import {
   DiPhotoshop,
   DiReact,
   DiTerminal,
-  DiCode,
   DiDatabase,
 } from 'react-icons/di';
 import {
@@ -44,8 +40,10 @@ import {
 } from 'react-icons/si';
 import { FaCode, FaPaintBrush, FaTools } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
-import { Chakra } from '../assets/icons/Chakra';
+import Chakra from '../assets/icons/Chakra';
 import SkillCard from '../components/SkillCard';
+import Container from '../components/Container';
+
 const Skills = () => {
   const frontend = [
     { id: 1, title: 'html', Icon: DiHtml5 },
@@ -82,47 +80,72 @@ const Skills = () => {
     { id: 4, title: 'emacs', Icon: SiGnuemacs },
   ];
   return (
-    <Box w="5xl" mx="auto" my="20">
-      <Heading fontFamily="jet" my="10">
-        <chakra.span color="tomato" fontSize="2xl" fontWeight="900">
-          03.{' '}
-        </chakra.span>
-        Habilidades
-      </Heading>
+    <Container title="Skills" index={3}>
       <Text>
         En mi formación logre aprender varias diferentes tecnologias y
         herramientas para el desarrollo de software, algunas de estas son
       </Text>
-      <Tabs w="full" bg={useColorModeValue('white', 'gray.700')} mt="10">
-        <TabList pt="2">
-          <Tab fontFamily="jet" _focus={{ outline: 'none' }}>
+      <Tabs
+        w="full"
+        bg={useColorModeValue('white', 'gray.700')}
+        mt="10"
+        orientation="vertical"
+      >
+        <TabList mt="2" dir="vetical" fontFamily="jet">
+          <Tab
+            fontSize={['2xs', 'md']}
+            _focus={{ outline: 'none' }}
+            justifyContent="left"
+          >
             <CgWebsite />
             <Text ml="4">Front-end</Text>
           </Tab>
-          <Tab fontFamily="jet" _focus={{ outline: 'none' }}>
+          <Tab
+            fontSize={['2xs', 'md']}
+            _focus={{ outline: 'none' }}
+            justifyContent="left"
+          >
             <FaCode />
             <Text ml="4">Back-end</Text>
           </Tab>
-          <Tab fontFamily="jet" _focus={{ outline: 'none' }}>
+          <Tab
+            fontSize={['2xs', 'md']}
+            _focus={{ outline: 'none' }}
+            justifyContent="left"
+            pr="0"
+          >
             <DiDatabase />
             <Text ml="4">Base de datos</Text>
           </Tab>
-          <Tab fontFamily="jet" _focus={{ outline: 'none' }}>
+          <Tab
+            fontSize={['2xs', 'md']}
+            _focus={{ outline: 'none' }}
+            justifyContent="left"
+          >
             <FaPaintBrush />
             <Text ml="4">Diseño</Text>
           </Tab>
-          <Tab fontFamily="jet" _focus={{ outline: 'none' }}>
+          <Tab
+            fontSize={['2xs', 'md']}
+            _focus={{ outline: 'none' }}
+            justifyContent="left"
+          >
             <FaTools />
             <Text ml="4">Herramientas</Text>
           </Tab>
         </TabList>
         <TabPanels>
-          <TabPanel>
-            <Wrap spacing="4" mx="auto">
+          <TabPanel p={{ base: '0', md: 'inherit' }}>
+            <SimpleGrid
+              minChildWidth={['70px', '110px']}
+              spacing={['1', '2']}
+              justifyContent="center"
+              alignContent="center"
+            >
               {frontend.map(item => (
                 <SkillCard key={item.id} item={item} />
               ))}
-            </Wrap>
+            </SimpleGrid>
           </TabPanel>
           <TabPanel>
             <Wrap spacing="4" mx="auto">
@@ -154,7 +177,7 @@ const Skills = () => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </Box>
+    </Container>
   );
 };
 
