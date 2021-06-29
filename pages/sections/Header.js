@@ -165,28 +165,15 @@ const Header = ({ inview }) => {
               contact Me
             </Button>
           </ButtonGroup>
-          <ButtonGroup display={{ base: 'none', lg: 'content' }}>
-            <IconButton
-              rounded="md"
-              fontSize="lg"
-              variant="primary"
-              size="sm"
-              icon={<FaGithub />}
-            />
-            <IconButton
-              rounded="md"
-              fontSize="lg"
-              variant="primary"
-              size="sm"
-              icon={<FaTwitter />}
-            />
-            <IconButton
-              rounded="md"
-              fontSize="lg"
-              variant="primary"
-              size="sm"
-              icon={<FaInstagram />}
-            />
+          <ButtonGroup
+            display={{ base: 'none', lg: 'inline-flex' }}
+            justifyContent="center"
+            size="sm"
+            variant="primary"
+          >
+            <IconButton rounded="md" fontSize="lg" icon={<FaGithub />} />
+            <IconButton rounded="md" fontSize="lg" icon={<FaTwitter />} />
+            <IconButton rounded="md" fontSize="lg" icon={<FaInstagram />} />
           </ButtonGroup>
           <ButtonGroup variant="primary" size="sm">
             <IconButton

@@ -1,11 +1,11 @@
 import {
   Heading,
-  HStack,
   VStack,
   Text,
   chakra,
   Button,
   Box,
+  Flex,
 } from '@chakra-ui/react';
 import React from 'react';
 import { FaDownload } from 'react-icons/fa';
@@ -14,7 +14,6 @@ import heroimage from '../assets/hero.svg';
 
 const Hero = ({ referencie }) => {
   const fontH1 = ['5xl', '6xl', '7xl', '8xl'];
-  const contentResp = ['full', '2xl', '7xl', '8xl'];
   return (
     <chakra.header
       ref={referencie}
@@ -28,21 +27,26 @@ const Hero = ({ referencie }) => {
       bgBlendMode="overlay, color-dodge, color-burn, color-dodge, normal"
       transition=".8s"
     >
-      <HStack h="full" w={contentResp} m="auto" justify="space-between">
-        <VStack
-          align="flex-start"
-          fontFamily="montse"
-          color="white"
-          alignSelf="self-start"
-          mt="40"
-        >
+      <Flex
+        direction={{ base: 'column', lg: 'row' }}
+        justifyContent="space-between"
+        h="full"
+        maxW="8xl"
+        m="auto"
+        px={{ base: '4', lg: 'none' }}
+      >
+        <VStack align="flex-start" color="white" alignSelf="self-start" mt="40">
           <chakra.span fontFamily="jet" color="tomato">
             👋🏻 Hi, my name is
           </chakra.span>
           <Heading as="h1" fontSize={fontH1}>
             Ariel Chura
           </Heading>
-          <Text w="xl" pb="5">
+          <Text
+            maxW={['full', 'full', '2xl']}
+            pb="5"
+            textAlign={{ base: 'justify', md: 'left' }}
+          >
             I&apos;m computer science degree with mention in Systems
             Engineering. I specialize in building (and occasionally designing)
             exceptional digital experiences and building accessible
@@ -53,7 +57,7 @@ const Hero = ({ referencie }) => {
             leftIcon={<FaDownload />}
             variant="secondary"
             textTransform="capitalize"
-            w="xs"
+            w={{ base: 'full', lg: 'xs' }}
             mt="12"
           >
             download resume
@@ -62,7 +66,7 @@ const Hero = ({ referencie }) => {
         <Box alignSelf="flex-end">
           <Image src={heroimage} alt="Picture of the author" width={600} />
         </Box>
-      </HStack>
+      </Flex>
     </chakra.header>
   );
 };
