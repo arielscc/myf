@@ -15,13 +15,19 @@ export default function Home() {
   const { ref, inView } = useInView({
     threshold: 0.13,
   });
+
+  const medias = {
+    fonts_p: { base: 'md' },
+    fonts_h2: { base: '' },
+  };
+
   return (
     <Box
       bg={useColorModeValue('white', '#1b283d')}
       color={useColorModeValue('gray.700', 'gray.50')}
       transitionDelay=".09s"
       fontFamily="montse"
-      fontSize="lg"
+      fontSize={medias.fonts_p}
       fontWeight="400"
     >
       <Header inview={inView} />

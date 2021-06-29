@@ -8,13 +8,13 @@ const Navigator = ({ children, title, position }) => (
     right={position === 'left' && '0'}
     left={position === 'right' && '0'}
     w="2xl"
+    h="400"
     shadow="lg"
     rounded="lg"
-    overflow="hidden"
     border="1px"
+    overflow="hidden"
     borderColor={useColorModeValue('gray.200', 'gray.500')}
   >
-    <Box w="full" h="full" bg="gray.200" rotate="ltr" />
     <HStack
       p="2"
       bg={useColorModeValue('gray.100', 'gray.600')}
@@ -49,6 +49,7 @@ const Navigator = ({ children, title, position }) => (
         </Text>
       </Box>
     </HStack>
+
     {children}
   </Box>
 );
