@@ -8,12 +8,12 @@ const Certified = ({ item }) => {
     <GridItem
       rounded="md"
       border="1px"
-      borderColor={useColorModeValue('gray.200', 'gray.600')}
       shadow="md"
       cursor="pointer"
       overflow="hidden"
+      borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
-      <Text as="h4" fontSize="sm" textAlign="left" p="2">
+      <Text as="h4" fontSize={{ base: 'xs', sm: 'sm' }} textAlign="left" p="2">
         {title}
       </Text>
       <Image src={image} alt={title} layout="responsive" />

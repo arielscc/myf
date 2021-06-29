@@ -5,7 +5,7 @@ import profile from '../assets/profile.svg';
 import Container from '../components/Container';
 
 const About = () => (
-  <Container>
+  <Container title="About" index={1}>
     <Flex
       direction={{ base: 'column', md: 'row' }}
       spacing="5"
