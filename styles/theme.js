@@ -7,7 +7,7 @@ const theme = extendTheme({
     montse: 'Montserrat',
   },
   colors: {
-    tomato: '#f45b69',
+    tomato: '#ff0030',
     secondary: '#012a4a',
     third: '#00cecb',
   },

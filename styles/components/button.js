@@ -9,13 +9,13 @@ export const Button = {
   variants: {
     primary: props => ({
       color: mode('white', 'cyan')(props),
-      px: '2',
+
       fontSize: 'sm',
       _hover: {
-        bg: mode(whiten('third', 0), darken('gray.600', 15))(props),
+        bg: mode(whiten('tomato', 20), darken('gray.600', 15))(props),
       },
       _focus: {
-        bg: mode(whiten('third', 0), darken('gray.600', 15))(props),
+        bg: mode(whiten('tomato', 0), darken('gray.600', 15))(props),
       },
     }),
     secondary: props => ({
