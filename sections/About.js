@@ -1,7 +1,7 @@
 import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import Image from 'next/image';
-import profile from '../assets/profile.svg';
+import profile from '../public/assets/profile.svg';
 import Container from '../components/Container';
 
 const About = () => (

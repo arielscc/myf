@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 import { SiPlatzi, SiUdemy } from 'react-icons/si';
 import { FaUniversity } from 'react-icons/fa';
-import image from '../assets/platzi/img3.jpg';
+import image from '../public/assets/platzi/img3.jpg';
 import Certified from '../components/Certified';
 import Container from '../components/Container';
 

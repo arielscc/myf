@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import Navigator from './Navigator';
-import picture from '../assets/projects/heroes-app.jpg';
+import picture from '../public/assets/projects/heroes-app.jpg';
 
 const Project = ({ data, index }) => {
   const {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider } from '@chakra-ui/react';
+import { Divider, Box } from '@chakra-ui/react';
 import Project from '../components/Project';
 import Container from '../components/Container';
 
@@ -43,10 +43,10 @@ const Projects = () => {
   return (
     <Container title="Projects" index={5}>
       {projects.map((project, i) => (
-        <>
-          <Project key={project.id} data={project} index={i} />
+        <Box key={project.id}>
+          <Project data={project} index={i} />
           <Divider />
-        </>
+        </Box>
       ))}
     </Container>
   );

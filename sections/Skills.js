@@ -40,7 +40,7 @@ import {
 } from 'react-icons/si';
 import { FaCode, FaPaintBrush, FaTools } from 'react-icons/fa';
 import { CgWebsite } from 'react-icons/cg';
-import Chakra from '../assets/icons/Chakra';
+import Chakra from '../icons/Chakra';
 import SkillCard from '../components/SkillCard';
 import Container from '../components/Container';
 

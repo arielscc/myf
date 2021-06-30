@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
-import heroimage from '../assets/hero.svg';
+import heroimage from '../public/assets/hero.svg';
 
 const Hero = ({ referencie }) => {
   const fontH1 = ['5xl', '6xl', '7xl', '8xl'];

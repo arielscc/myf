@@ -1,15 +1,15 @@
 import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
-import About from './sections/About';
-import Education from './sections/Education';
-import Experience from './sections/Experience';
-import Header from './sections/Header';
-import Hero from './sections/Hero';
-import Skills from './sections/Skills';
-import Projects from './sections/Projects';
-import Contact from './sections/Contact';
-import Footer from './sections/Footer';
+import About from '../sections/About';
+import Education from '../sections/Education';
+import Experience from '../sections/Experience';
+import Header from '../sections/Header';
+import Hero from '../sections/Hero';
+import Skills from '../sections/Skills';
+import Projects from '../sections/Projects';
+import Contact from '../sections/Contact';
+import Footer from '../sections/Footer';
 
 export default function Home() {
   const { ref, inView } = useInView({
