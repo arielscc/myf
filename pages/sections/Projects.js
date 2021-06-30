@@ -1,4 +1,5 @@
 import React from 'react';
+import { Divider } from '@chakra-ui/react';
 import Project from '../components/Project';
 import Container from '../components/Container';
 
@@ -6,7 +7,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Cripto Exchange',
+      title: 'Cripto Exchange s Exchange asdasdasdss',
       links: {
         github: 'https://github.com/arielscc/intercambio-btc',
         live: 'https://intercambio-btc.netlify.app/',
@@ -42,7 +43,10 @@ const Projects = () => {
   return (
     <Container title="Projects" index={5}>
       {projects.map((project, i) => (
-        <Project key={project.id} data={project} index={i} />
+        <>
+          <Project key={project.id} data={project} index={i} />
+          <Divider />
+        </>
       ))}
     </Container>
   );

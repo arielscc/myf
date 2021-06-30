@@ -6,8 +6,7 @@ const Navigator = ({ children, title }) => (
   <Box
     maxW="2xl"
     w="full"
-    h="full"
-    maxH="400"
+    h="fit-content"
     shadow="lg"
     rounded="lg"
     border="1px"
@@ -39,7 +38,6 @@ const Navigator = ({ children, title }) => (
         </Text>
       </Box>
     </HStack>
-
     {children}
   </Box>
 );

@@ -12,6 +12,7 @@ import {
   useColorModeValue,
   Link,
   Flex,
+  Wrap,
 } from '@chakra-ui/react';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import Navigator from './Navigator';
@@ -31,23 +32,26 @@ const Project = ({ data, index }) => {
         base: 'column-reverse',
         md: position === 'left' ? 'row' : 'row-reverse',
       }}
-      position="relative"
-      mt="10"
-      h="md"
-      justifyContent={position === 'left' ? 'flex-start' : 'flex-end'}
+      my="5"
+      alignItems="center"
+      h={{ base: 'inherit', md: 'md' }}
     >
       <VStack
         w={{ base: 'full', md: 'lg' }}
-        zIndex="docked"
         spacing="5"
         alignItems={position === 'left' ? 'flex-start' : 'flex-end'}
         textAlign={position === 'left' ? 'left' : 'right'}
+        mr={position === 'left' ? { base: 'inherit', md: '-32' } : 'inherit'}
+        ml={position === 'right' ? { base: 'inherit', md: '-32' } : 'inherit'}
+        zIndex="docked"
       >
         <Box p="4">
           <chakra.span fontSize="md" fontFamily="jet">
             Proyecto destacado
           </chakra.span>
-          <Heading fontSize="2xl">{title}</Heading>
+          <Heading fontSize="2xl" maxW="2xs">
+            {title}
+          </Heading>
         </Box>
         <Box
           rounded="xl"
@@ -57,25 +61,26 @@ const Project = ({ data, index }) => {
           border="1px"
           borderColor={useColorModeValue('gray.200', 'gray.600')}
         >
-          <Text
-            fontSize="md"
-            textAlign={position === 'left' ? 'left' : 'right'}
-          >
+          <Text textAlign={position === 'left' ? 'left' : 'right'}>
             {description}
           </Text>
         </Box>
-        <Box p="4" spacing="3">
-          <HStack w="2xs">
+        <Box w={{ base: 'full', md: '60%', lg: '65%' }}>
+          <Wrap gridGap="2">
             {tags.map(tag => (
               <Tag key={tag} size="md" variant="outline" colorScheme="cyan">
                 {tag}
               </Tag>
             ))}
-          </HStack>
+          </Wrap>
           <HStack
             spacing="1"
             mt="4"
-            justifyContent={position === 'right' ? 'flex-start' : 'flex-end'}
+            justifyContent={
+              position === 'right'
+                ? 'flex-start'
+                : { base: 'flex-start', md: 'flex-end' }
+            }
           >
             <IconButton
               as={Link}
@@ -100,13 +105,8 @@ const Project = ({ data, index }) => {
           </HStack>
         </Box>
       </VStack>
-      <Navigator title={title} position={position}>
-        <Image
-          src={picture}
-          alt="proyecto"
-          layout="responsive"
-          position={position}
-        />
+      <Navigator title={title}>
+        <Image src={picture} alt={`imagen ${title}`} layout="responsive" />
       </Navigator>
     </Flex>
   );
