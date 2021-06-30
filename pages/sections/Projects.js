@@ -1,6 +1,6 @@
 import React from 'react';
-import { Heading, Box, chakra } from '@chakra-ui/react';
 import Project from '../components/Project';
+import Container from '../components/Container';
 
 const Projects = () => {
   const projects = [
@@ -40,17 +40,11 @@ const Projects = () => {
   ];
 
   return (
-    <Box w="5xl" mx="auto" my="20">
-      <Heading fontFamily="jet">
-        <chakra.span color="tomato" fontSize="2xl" fontWeight="900">
-          05.{' '}
-        </chakra.span>
-        Proyectos
-      </Heading>
+    <Container title="Projects" index={5}>
       {projects.map((project, i) => (
         <Project key={project.id} data={project} index={i} />
       ))}
-    </Box>
+    </Container>
   );
 };
 

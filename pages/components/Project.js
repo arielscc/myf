@@ -11,6 +11,7 @@ import {
   Heading,
   useColorModeValue,
   Link,
+  Flex,
 } from '@chakra-ui/react';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import Navigator from './Navigator';
@@ -25,14 +26,18 @@ const Project = ({ data, index }) => {
   } = data;
   const position = index % 2 === 0 ? 'left' : 'right';
   return (
-    <HStack
+    <Flex
+      direction={{
+        base: 'column-reverse',
+        md: position === 'left' ? 'row' : 'row-reverse',
+      }}
       position="relative"
       mt="10"
       h="md"
       justifyContent={position === 'left' ? 'flex-start' : 'flex-end'}
     >
       <VStack
-        w="lg"
+        w={{ base: 'full', md: 'lg' }}
         zIndex="docked"
         spacing="5"
         alignItems={position === 'left' ? 'flex-start' : 'flex-end'}
@@ -103,7 +108,7 @@ const Project = ({ data, index }) => {
           position={position}
         />
       </Navigator>
-    </HStack>
+    </Flex>
   );
 };
 
