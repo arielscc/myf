@@ -8,7 +8,7 @@ const Footer = () => (
     bg={useColorModeValue('gray.50', 'gray.800')}
     justifyContent="center"
   >
-    <Text fontSize="sm" fontFamily="jet" px="5">
+    <Text fontSize="md" fontFamily="jet" px="5" textAlign="center">
       Diseñado & Desarrollado por Ariel Chura
     </Text>
   </HStack>

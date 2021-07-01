@@ -26,6 +26,7 @@ const Hero = ({ referencie }) => {
       linear-gradient(305deg, #004596 0%, #150093 50%)"
       bgBlendMode="overlay, color-dodge, color-burn, color-dodge, normal"
       transition=".8s"
+      id="home"
     >
       <Flex
         direction={{ base: 'column', lg: 'row' }}

@@ -87,7 +87,7 @@ const Skills = () => {
       </Text>
       <Tabs
         w="full"
-        bg={useColorModeValue('white', 'gray.700')}
+        bg={useColorModeValue('white', 'inherit')}
         mt="10"
         orientation="vertical"
       >

@@ -9,6 +9,8 @@ import {
   Box,
   Icon,
   useDisclosure,
+  Link,
+  Flex,
 } from '@chakra-ui/react';
 import React from 'react';
 import {
@@ -113,9 +115,14 @@ const Header = ({ inview }) => {
   const lightvalue = inview ? 'rgba(255,255,255,0.1)' : '#000032';
   const darkvalue = inview ? 'rgba(26, 32, 44, .7)' : 'gray.800';
   const padding = inview ? '4' : '2';
+  const LightBlurMenuColor = inview
+    ? 'rgba(255, 255, 255, .1)'
+    : 'rgba(0, 0, 50, .7)';
   return (
     <>
-      <MobileContent isOpen={isOpen} inview={inview} />
+      {/*
+        <MobileContent isOpen={isOpen} inview={inview} />
+      */}
       <HStack
         as="nav"
         bg={useColorModeValue(lightvalue, darkvalue)}
@@ -127,54 +134,102 @@ const Header = ({ inview }) => {
         py={padding}
         transition=".5s"
         px="5"
-        zIndex="banner"
+        zIndex="modal"
       >
         <HStack w="5xl" justify="space-between">
-          <Text fontSize="xl" fontWeight="800" fontFamily="jet" color="tomato">
-            ArielChura
-          </Text>
-          <ButtonGroup
-            variant="ghost"
-            spacing="1"
+          <Link
+            href="/"
+            fontSize="xl"
+            fontWeight="800"
             fontFamily="jet"
-            size="sm"
-            _focus={{
-              outlineColor: 'white',
+            color="tomato"
+            _hover={{ textDecoration: 'none' }}
+            zIndex="modal"
+          >
+            ArielChura
+          </Link>
+          <Box
+            fontFamily="jet"
+            w="full"
+            flexDirection={{ base: 'column', lg: 'row' }}
+            alignItems="center"
+            justifyContent={{ base: 'center', lg: 'flex-end' }}
+            display={{ base: isOpen ? 'flex' : 'none', lg: 'inline-flex' }}
+            position={{ base: 'fixed', lg: 'inherit' }}
+            top="0"
+            left="0"
+            bottom="0"
+            right="0"
+            zIndex="base"
+            gridGap="5"
+            bg={{
+              base: useColorModeValue(LightBlurMenuColor, 'rgba(0, 0, 0, .3)'),
+              lg: 'none',
             }}
-            display={{ base: 'none', lg: 'inline-flex' }}
+            backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
           >
-            <Button variant="primary" textTransform="capitalize">
+            <Link href="#home" textTransform="capitalize" variant="primary">
               home
-            </Button>
-            <Button variant="primary" textTransform="capitalize">
+            </Link>
+            <Link href="#about" textTransform="capitalize" variant="primary">
               about
-            </Button>
-            <Button variant="primary" textTransform="capitalize">
+            </Link>
+            <Link
+              href="#education"
+              variant="primary"
+              textTransform="capitalize"
+            >
               education
-            </Button>
-            <Button variant="primary" textTransform="capitalize">
+            </Link>
+            <Link href="#skills" textTransform="capitalize" variant="primary">
               skills
-            </Button>
-            <Button variant="primary" textTransform="capitalize">
+            </Link>
+            <Link
+              href="#experience"
+              textTransform="capitalize"
+              variant="primary"
+            >
               experience
-            </Button>
-            <Button variant="primary" textTransform="capitalize">
+            </Link>
+            <Link href="#projects" textTransform="capitalize" variant="primary">
               projects
-            </Button>
-            <Button variant="primary" textTransform="capitalize">
-              contact Me
-            </Button>
-          </ButtonGroup>
-          <ButtonGroup
-            display={{ base: 'none', lg: 'inline-flex' }}
-            justifyContent="center"
-            size="sm"
-            variant="primary"
-          >
-            <IconButton rounded="md" fontSize="lg" icon={<FaGithub />} />
-            <IconButton rounded="md" fontSize="lg" icon={<FaTwitter />} />
-            <IconButton rounded="md" fontSize="lg" icon={<FaInstagram />} />
-          </ButtonGroup>
+            </Link>
+            <Link href="#contact" textTransform="capitalize" variant="primary">
+              contact
+            </Link>
+          </Box>
+          <HStack display={{ base: 'none', lg: 'inline-flex' }}>
+            <IconButton
+              as={Link}
+              href="https://github.com/arielscc"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaGithub />}
+              variant="primary"
+              size="sm"
+            />
+            <IconButton
+              as={Link}
+              href="https://twitter.com/arielschura"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaTwitter />}
+              variant="primary"
+              size="sm"
+            />
+            <IconButton
+              as={Link}
+              href="https://instagram.com/arielchura"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaInstagram />}
+              variant="primary"
+              size="sm"
+            />
+          </HStack>
           <ButtonGroup variant="primary" size="sm">
             <IconButton
               rounded="md"

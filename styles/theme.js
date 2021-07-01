@@ -1,5 +1,6 @@
 import { extendTheme } from '@chakra-ui/react';
 import { Button } from './components/button';
+import { Link } from './components/link';
 import { ButtonGroup } from './components/buttonGroup';
 const theme = extendTheme({
   //categoria 1 => h1 -> 8xl -> []
@@ -17,6 +18,7 @@ const theme = extendTheme({
   components: {
     Button,
     ButtonGroup,
+    Link,
   },
 });
 export default theme;
