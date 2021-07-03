@@ -1,14 +1,18 @@
 import React from 'react';
 import {
-  Box,
+  chakra,
+  List,
   Text,
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  ListItem,
+  ListIcon,
 } from '@chakra-ui/react';
 import Container from '../components/Container';
+import { MdCheckCircle } from 'react-icons/md';
 
 const Experience = () => (
   <Container title="Experience" index={4}>
@@ -19,35 +23,62 @@ const Experience = () => (
             as="h4"
             flex="1"
             textAlign="left"
+            fontSize="lg"
             fontFamily="jet"
             color="blue.600"
             fontWeight="700"
           >
-            Facultad de ciencias puras y naturales
+            Facultad de Ciencias Puras y Naturales{' '}
+            <chakra.span fontSize="xs">Jan/2018 - Dec/2019</chakra.span>
           </Text>
           <AccordionIcon />
         </AccordionButton>
 
         <AccordionPanel pb={4} textAlign={{ base: 'justify', md: 'left' }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          <List spacing={3}>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Encargado del soporte de sistemas de administración facultativa
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Encargado de soporte de redes y comunicación de la facultad
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Diseño de interfaces de usuario y Diseño grafico
+            </ListItem>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Administración de base de datos
+            </ListItem>
+          </List>
         </AccordionPanel>
       </AccordionItem>
 
       <AccordionItem>
         <AccordionButton>
-          <Box flex="1" textAlign="left">
-            Section 2 title
-          </Box>
+          <Text
+            as="h4"
+            flex="1"
+            textAlign="left"
+            fontSize="lg"
+            fontFamily="jet"
+            color="blue.600"
+            fontWeight="700"
+          >
+            Fam - Bolivia{' '}
+            <chakra.span fontSize="xs">Oct/2018 - Jun/2019</chakra.span>
+          </Text>
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel pb={4}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          <List spacing={3}>
+            <ListItem>
+              <ListIcon as={MdCheckCircle} color="green.500" />
+              Encargado de la Administración de redes y sistemas
+            </ListItem>
+          </List>
         </AccordionPanel>
       </AccordionItem>
     </Accordion>

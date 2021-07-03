@@ -1,19 +1,10 @@
-import {
-  Heading,
-  VStack,
-  Text,
-  chakra,
-  Button,
-  Box,
-  Flex,
-} from '@chakra-ui/react';
+import { Heading, Text, chakra, Button, Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
 import heroimage from '../public/assets/hero.svg';
 
 const Hero = ({ referencie }) => {
-  const fontH1 = ['5xl', '6xl', '7xl', '8xl'];
   return (
     <chakra.header
       ref={referencie}
@@ -36,32 +27,33 @@ const Hero = ({ referencie }) => {
         m="auto"
         px={{ base: '4', lg: 'none' }}
       >
-        <VStack align="flex-start" color="white" alignSelf="self-start" mt="40">
-          <chakra.span fontFamily="jet" color="tomato">
+        <Box align="flex-start" color="white" alignSelf="self-start" mt="40">
+          <chakra.span fontFamily="jet" color="tomato" fontSize="lg">
             👋🏻 Hi, my name is
           </chakra.span>
-          <Heading as="h1" fontSize={fontH1}>
+          <Heading as="h1" fontSize={['5xl', '6xl', '7xl', '8xl']}>
             Ariel Chura
           </Heading>
           <Text
-            maxW={['full', 'full', '2xl']}
+            maxW={['full', 'full', 'xl']}
             textAlign={{ base: 'justify', md: 'left' }}
+            fontSize={['2xl', '3xl', '4xl', '5xl']}
+            lineHeight="10"
+            textColor="third"
+            fontWeight="500"
           >
-            I&apos;m computer science degree with mention in Systems
-            Engineering. I specialize in building (and occasionally designing)
-            exceptional digital experiences and building accessible
-            human-centered products. Currently, I&apos;m looking for
-            professional growth opportunities as a frontend developer.
+            Frontend Developer
           </Text>
           <Button
             leftIcon={<FaDownload />}
             variant="secondary"
             textTransform="capitalize"
             w={{ base: 'full', lg: 'xs' }}
+            mt="10"
           >
             download resume
           </Button>
-        </VStack>
+        </Box>
         <Box alignSelf="flex-end">
           <Image src={heroimage} alt="Picture of the author" width={600} />
         </Box>

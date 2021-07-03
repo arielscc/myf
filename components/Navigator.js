@@ -6,7 +6,6 @@ const Navigator = ({ children, title }) => (
   <Box
     maxW="2xl"
     w="full"
-    h="fit-content"
     shadow="lg"
     rounded="lg"
     border="1px"

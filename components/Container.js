@@ -9,7 +9,7 @@ const Container = ({ children, title, index }) => (
     px={{ base: '4', lg: 'none' }}
     id={title.toLowerCase()}
   >
-    <Heading fontFamily="jet">
+    <Heading fontFamily="jet" mb="10">
       <chakra.span color="tomato" fontSize="2xl" fontWeight="900">
         0{index}.{' '}
       </chakra.span>

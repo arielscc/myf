@@ -20,6 +20,16 @@ export const Link = {
         bg: mode(whiten('tomato', 0), darken('gray.600', 15))(props),
       },
     }),
+    secondary: {
+      color: whiten('tomato', 40),
+      fontSize: 'sm',
+      fontFamily: 'jet',
+      textDecoration: 'underline',
+      fontWeight: '700',
+      _hover: {
+        textDecoration: 'none',
+      },
+    },
   },
   // default values for `size` and `variant`
   defaultProps: {

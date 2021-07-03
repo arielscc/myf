@@ -16,7 +16,6 @@ import {
 } from '@chakra-ui/react';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import Navigator from './Navigator';
-import picture from '../public/assets/projects/heroes-app.jpg';
 
 const Project = ({ data, index }) => {
   const {
@@ -24,8 +23,11 @@ const Project = ({ data, index }) => {
     links: { github, live },
     description,
     tags,
+    url,
   } = data;
+
   const position = index % 2 === 0 ? 'left' : 'right';
+
   return (
     <Flex
       direction={{
@@ -46,7 +48,7 @@ const Project = ({ data, index }) => {
         zIndex="docked"
       >
         <Box p="4">
-          <chakra.span fontSize="md" fontFamily="jet">
+          <chakra.span fontSize="sm" fontFamily="jet" color="tomato">
             Proyecto destacado
           </chakra.span>
           <Heading fontSize="2xl" maxW="2xs">
@@ -105,8 +107,15 @@ const Project = ({ data, index }) => {
           </HStack>
         </Box>
       </VStack>
-      <Navigator title={title}>
-        <Image src={picture} alt={`imagen ${title}`} layout="responsive" />
+      <Navigator title={title} position={position}>
+        <Image
+          src={url}
+          alt={`imagen ${title}`}
+          width="100%"
+          height="50px"
+          layout="responsive"
+          objectFit="fill"
+        />
       </Navigator>
     </Flex>
   );

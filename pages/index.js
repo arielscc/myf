@@ -13,17 +13,16 @@ import Footer from '../sections/Footer';
 
 export default function Home() {
   const { ref, inView } = useInView({
-    threshold: 0.13,
+    threshold: 1,
   });
 
   return (
     <Box
       bg={useColorModeValue('white', '#1b283d')}
-      color={useColorModeValue('gray.700', 'gray.50')}
-      transitionDelay=".09s"
+      color={useColorModeValue('gray.700', 'gray.100')}
+      transitionDelay=".05s"
       fontFamily="montse"
       fontSize={{ base: 'sm', sm: 'md' }}
-      fontWeight="400"
     >
       <Header inview={inView} />
       <Hero referencie={ref} />

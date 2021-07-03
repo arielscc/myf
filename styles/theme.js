@@ -3,9 +3,6 @@ import { Button } from './components/button';
 import { Link } from './components/link';
 import { ButtonGroup } from './components/buttonGroup';
 const theme = extendTheme({
-  //categoria 1 => h1 -> 8xl -> []
-  //categoria 2 => h2 => heading
-  //
   fonts: {
     jet: 'JetBrains Mono',
     montse: 'Montserrat',
