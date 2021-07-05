@@ -11,13 +11,13 @@ import {
   ListItem,
   ListIcon,
 } from '@chakra-ui/react';
-import Container from '../components/Container';
 import { MdCheckCircle } from 'react-icons/md';
+import Container from '../components/Container';
 import AppContext from '../context/context';
 
 const Experience = () => {
   const { experience } = useContext(AppContext);
-  const { job_a, job_b } = experience;
+  const { job_a: jobA, job_b: jobB } = experience;
   return (
     <Container title="Experience" index={4}>
       <Accordion defaultIndex={[0]} allowMultiple mt="10">
@@ -40,8 +40,8 @@ const Experience = () => {
 
           <AccordionPanel pb={4} textAlign={{ base: 'justify', md: 'left' }}>
             <List spacing={3}>
-              {job_a.map(job => (
-                <ListItem>
+              {jobA.map(job => (
+                <ListItem key={job}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   {job}
                 </ListItem>
@@ -68,8 +68,8 @@ const Experience = () => {
           </AccordionButton>
           <AccordionPanel pb={4}>
             <List spacing={3}>
-              {job_b.map(job => (
-                <ListItem>
+              {jobB.map(job => (
+                <ListItem key={job}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   {job}
                 </ListItem>

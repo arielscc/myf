@@ -24,8 +24,8 @@ import {
   FaInstagram,
 } from 'react-icons/fa';
 import { HiMenu, HiX, HiTranslate } from 'react-icons/hi';
-import AppContext from '../context/context';
 import { useRouter } from 'next/dist/client/router';
+import AppContext from '../context/context';
 
 const Header = ({ inview }) => {
   const ColorModeIcon = useColorModeValue(FaMoon, FaSun);
@@ -39,10 +39,9 @@ const Header = ({ inview }) => {
     : 'rgba(0, 0, 50, .7)';
 
   const { header } = useContext(AppContext);
-  const { categories, icons } = header;
+  const { categories } = header;
 
   const router = useRouter();
-  console.log(router);
   const handleChangeLanguage = value => {
     if (value !== router.locale) {
       router.push(router.pathname, router.pathname, { locale: value });

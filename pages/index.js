@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
-import es from '../i18n/es';
-import en from '../i18n/en';
+import { useRouter } from 'next/dist/client/router';
+import AppContext from '../context/context';
 
 import About from '../sections/About';
 import Education from '../sections/Education';
@@ -13,8 +13,9 @@ import Skills from '../sections/Skills';
 import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
 import Footer from '../sections/Footer';
-import { useRouter } from 'next/dist/client/router';
-import AppContext from '../context/context';
+
+import es from '../i18n/es';
+import en from '../i18n/en';
 
 export default function Home() {
   const { ref, inView } = useInView({
