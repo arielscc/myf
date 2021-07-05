@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import {
   HStack,
   chakra,
@@ -9,8 +10,12 @@ import {
   useDisclosure,
   Link,
   Flex,
+  Menu,
+  MenuList,
+  MenuItem,
+  MenuButton,
+  Tooltip,
 } from '@chakra-ui/react';
-import React from 'react';
 import {
   FaSun,
   FaMoon,
@@ -18,7 +23,9 @@ import {
   FaTwitter,
   FaInstagram,
 } from 'react-icons/fa';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { HiMenu, HiX, HiTranslate } from 'react-icons/hi';
+import AppContext from '../context/context';
+import { useRouter } from 'next/dist/client/router';
 
 const Header = ({ inview }) => {
   const ColorModeIcon = useColorModeValue(FaMoon, FaSun);
@@ -31,6 +38,16 @@ const Header = ({ inview }) => {
     ? 'rgba(255, 255, 255, .1)'
     : 'rgba(0, 0, 50, .7)';
 
+  const { header } = useContext(AppContext);
+  const { categories, icons } = header;
+
+  const router = useRouter();
+  console.log(router);
+  const handleChangeLanguage = value => {
+    if (value !== router.locale) {
+      router.push(router.pathname, router.pathname, { locale: value });
+    }
+  };
   return (
     <HStack
       as="nav"
@@ -58,14 +75,14 @@ const Header = ({ inview }) => {
         >
           ArielChura
         </Link>
-        <chakra.div
+        <chakra.nav
           fontFamily="jet"
           w="full"
           display={{ base: isOpen ? 'flex' : 'none', lg: 'flex' }}
           marginInlineStart="-0.5"
           flexDirection={{ base: 'column', lg: 'row' }}
           alignItems="center"
-          justifyContent={{ base: 'center', lg: 'flex-end' }}
+          justifyContent={{ base: 'center', lg: 'center' }}
           position={{ base: 'fixed', lg: 'inherit' }}
           top="0"
           left="0"
@@ -79,74 +96,89 @@ const Header = ({ inview }) => {
           }}
           backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
         >
-          <Link href="#home" textTransform="capitalize" variant="primary">
-            home
-          </Link>
-          <Link href="#about" textTransform="capitalize" variant="primary">
-            about
-          </Link>
-          <Link href="#education" variant="primary" textTransform="capitalize">
-            education
-          </Link>
-          <Link href="#skills" textTransform="capitalize" variant="primary">
-            skills
-          </Link>
-          <Link href="#experience" textTransform="capitalize" variant="primary">
-            experience
-          </Link>
-          <Link href="#projects" textTransform="capitalize" variant="primary">
-            projects
-          </Link>
-          <Link href="#contact" textTransform="capitalize" variant="primary">
-            contact
-          </Link>
-        </chakra.div>
+          {categories.map(category => (
+            <Link
+              href={`#${category}`}
+              textTransform="capitalize"
+              variant="primary"
+              key={category}
+            >
+              {category}
+            </Link>
+          ))}
+        </chakra.nav>
         <HStack display={{ base: 'none', lg: 'inline-flex' }}>
-          <IconButton
-            as={Link}
-            href="https://github.com/arielscc"
-            target="_blank"
-            rounded="md"
-            fontSize="lg"
-            icon={<FaGithub />}
-            variant="primary"
-            size="sm"
-          />
-          <IconButton
-            as={Link}
-            href="https://twitter.com/arielschura"
-            target="_blank"
-            rounded="md"
-            fontSize="lg"
-            icon={<FaTwitter />}
-            variant="primary"
-            size="sm"
-          />
-          <IconButton
-            as={Link}
-            href="https://instagram.com/arielchura"
-            target="_blank"
-            rounded="md"
-            fontSize="lg"
-            icon={<FaInstagram />}
-            variant="primary"
-            size="sm"
-          />
+          <Tooltip hasArrow label="Github">
+            <IconButton
+              as={Link}
+              href="https://github.com/arielscc"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaGithub />}
+              variant="primary"
+              size="sm"
+            />
+          </Tooltip>
+          <Tooltip hasArrow label="Twitter">
+            <IconButton
+              as={Link}
+              href="https://twitter.com/arielschura"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaTwitter />}
+              variant="primary"
+              size="sm"
+            />
+          </Tooltip>
+          <Tooltip hasArrow label="Instagram">
+            <IconButton
+              as={Link}
+              href="https://instagram.com/arielchura"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaInstagram />}
+              variant="primary"
+              size="sm"
+            />
+          </Tooltip>
         </HStack>
-        <ButtonGroup variant="primary" size="sm">
-          <IconButton
-            rounded="md"
-            icon={<ColorModeIcon />}
-            onClick={toggleColorMode}
-          />
-          <IconButton
-            rounded="md"
-            icon={<Icon as={isOpen ? HiX : HiMenu} h="5" w="5" />}
-            onClick={onToggle}
-            display={{ base: 'inline-flex', lg: 'none' }}
-          />
-        </ButtonGroup>
       </Flex>
+      <ButtonGroup
+        variant="primary"
+        size="sm"
+        position="absolute"
+        right="0"
+        pr="5"
+      >
+        <Menu>
+          <Tooltip hasArrow>
+            <MenuButton
+              rounded="md"
+              as={IconButton}
+              aria-label="Languages"
+              icon={<HiTranslate />}
+            />
+          </Tooltip>
+          <MenuList>
+            <MenuItem onClick={() => handleChangeLanguage('es')}>ES</MenuItem>
+            <MenuItem onClick={() => handleChangeLanguage('en')}>EN</MenuItem>
+          </MenuList>
+        </Menu>
+        <IconButton
+          rounded="md"
+          icon={<ColorModeIcon />}
+          onClick={toggleColorMode}
+        />
+        <IconButton
+          rounded="md"
+          icon={<Icon as={isOpen ? HiX : HiMenu} h="5" w="5" />}
+          onClick={onToggle}
+          display={{ base: 'inline-flex', lg: 'none' }}
+        />
+      </ButtonGroup>
     </HStack>
   );
 };

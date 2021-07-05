@@ -42,7 +42,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "(page| public| sections|components)*.{html,ts,tsx,js,jsx,json,css,scss}": [
+    "[page|public|sections|components]/*.{html,ts,tsx,js,jsx,json,css,scss}": [
       "eslint --cache --fix",
       "prettier --write",
       "git add"

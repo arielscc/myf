@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Box,
   Heading,
@@ -23,9 +23,10 @@ import { MdCheckCircle } from 'react-icons/md';
 
 import Container from '../components/Container';
 import CertModal from '../components/CertModal';
+import AppContext from '../context/context';
 
 const Education = () => {
-  const data = {
+  const certs = {
     univ: [
       {
         id: 1,
@@ -265,11 +266,15 @@ const Education = () => {
   };
   const [show, setShow] = useState(false);
   const handleToggle = () => setShow(!show);
+
+  const { education } = useContext(AppContext);
+  const { title, univ, desc_u, desc_c, links } = education;
   return (
-    <Container title="Education" index={2}>
+    <Container title={title} index={2}>
       <Flex
         gridGap={{ base: '5', lg: '10' }}
         direction={{ base: 'column', lg: 'row' }}
+        justify="space-between"
       >
         <Box
           colSpan="2"
@@ -277,13 +282,14 @@ const Education = () => {
           textAlign="left"
           mt="4"
           display={{ base: 'block' }}
-          w={{ base: 'full', lg: '50%' }}
+          w={{ base: 'full', lg: '40%' }}
         >
           <Heading fontSize="2xl" fontWeight="500">
-            Computer Science - UMSA
+            {univ}
           </Heading>
           <Text mt="5">
-            Estudié la carrera de Informática en la{' '}
+            {desc_u}
+            {/** Estudié la carrera de Informática en la{' '}
             <Link
               variant="secondary"
               fontSize="md"
@@ -320,7 +326,7 @@ const Education = () => {
               target="_blank"
             >
               Congreso de Biotecnologia
-            </Link>
+          </Link>**/}
           </Text>
         </Box>
 
@@ -330,10 +336,7 @@ const Education = () => {
           mt="5"
           w={{ base: 'full', lg: '50%' }}
         >
-          <Text textAlign="left">
-            Durante mi formacion, también logré obtener algunas certificaciones
-            dentro de la universidad y en plataformas de formacion en linea.
-          </Text>
+          <Text textAlign="left">{desc_c}</Text>
           <TabList>
             <Tab>
               <Icon
@@ -375,7 +378,7 @@ const Education = () => {
             <TabPanel px="0" py="4">
               <Collapse startingHeight={180} in={show}>
                 <List spacing={3} textAlign="left">
-                  {data.univ.map(item => {
+                  {certs.univ.map(item => {
                     return (
                       <ListItem key={item.id} boxSizing="border-box">
                         <ListIcon as={MdCheckCircle} color="green.500" />
@@ -389,7 +392,7 @@ const Education = () => {
             <TabPanel px="0" py="4">
               <Collapse startingHeight={180} in={show}>
                 <List spacing={3} textAlign="left">
-                  {data.platzi.map(({ id, title, url }) => (
+                  {certs.platzi.map(({ id, title, url }) => (
                     <ListItem key={id}>
                       <ListIcon as={MdCheckCircle} color="green.500" />
                       <Link href={url} target="_blank">

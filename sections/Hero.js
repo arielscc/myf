@@ -1,10 +1,13 @@
 import { Heading, Text, chakra, Button, Box, Flex } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
 import heroimage from '../public/assets/hero.svg';
+import AppContext from '../context/context';
 
 const Hero = ({ referencie }) => {
+  const { hero } = useContext(AppContext);
+  const { greet, button, title } = hero;
   return (
     <chakra.header
       ref={referencie}
@@ -17,7 +20,7 @@ const Hero = ({ referencie }) => {
       linear-gradient(305deg, #004596 0%, #150093 50%)"
       bgBlendMode="overlay, color-dodge, color-burn, color-dodge, normal"
       transition=".8s"
-      id="home"
+      id={title}
     >
       <Flex
         direction={{ base: 'column', lg: 'row' }}
@@ -29,7 +32,7 @@ const Hero = ({ referencie }) => {
       >
         <Box align="flex-start" color="white" alignSelf="self-start" mt="40">
           <chakra.span fontFamily="jet" color="tomato" fontSize="lg">
-            👋🏻 Hi, my name is
+            👋🏻 {greet}
           </chakra.span>
           <Heading as="h1" fontSize={['5xl', '6xl', '7xl', '8xl']}>
             Ariel Chura
@@ -51,7 +54,7 @@ const Hero = ({ referencie }) => {
             w={{ base: 'full', lg: 'xs' }}
             mt="10"
           >
-            download resume
+            {button}
           </Button>
         </Box>
         <Box alignSelf="flex-end">

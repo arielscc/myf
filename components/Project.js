@@ -17,7 +17,7 @@ import {
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import Navigator from './Navigator';
 
-const Project = ({ data, index }) => {
+const Project = ({ data, index, type }) => {
   const {
     title,
     links: { github, live },
@@ -48,8 +48,13 @@ const Project = ({ data, index }) => {
         zIndex="docked"
       >
         <Box p="4">
-          <chakra.span fontSize="sm" fontFamily="jet" color="tomato">
-            Proyecto destacado
+          <chakra.span
+            fontSize="sm"
+            fontFamily="jet"
+            color="tomato"
+            textTransform="capitalize"
+          >
+            {type}
           </chakra.span>
           <Heading fontSize="2xl" maxW="2xs">
             {title}

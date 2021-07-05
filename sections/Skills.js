@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Text,
   Tabs,
@@ -40,6 +40,7 @@ import { CgWebsite } from 'react-icons/cg';
 import Chakra from '../icons/Chakra';
 import SkillCard from '../components/SkillCard';
 import Container from '../components/Container';
+import AppContext from '../context/context';
 
 const Skills = () => {
   const data = {
@@ -69,37 +70,43 @@ const Skills = () => {
       { id: 3, title: 'figma', Icon: SiFigma },
     ],
     tools: [
-      { id: 1, title: 'temrinal', Icon: DiTerminal },
+      { id: 1, title: 'terminal', Icon: DiTerminal },
       { id: 2, title: 'VSCode', Icon: SiVisualstudio },
       { id: 3, title: 'git', Icon: SiGit },
       { id: 4, title: 'docker', Icon: SiDocker },
     ],
   };
-
-  const names = Object.keys(data);
+  const tools = Object.keys(data);
+  const { skills } = useContext(AppContext);
+  const { title, tabs, desc } = skills;
   const icons = [CgWebsite, FaCode, DiDatabase, FaPaintBrush, FaTools];
-  const headers = names.map((item, i) => ({
+  const headers = tabs.map((item, i) => ({
     id: i,
     name: item,
     icon: icons[i],
   }));
 
   return (
-    <Container title="Skills" index={3}>
+    <Container title={title} index={3}>
       <Text mt="10" maxW="xl">
-        En mis tiempos libres pude capacitarme en diferentes tecnologias,
-        algunas de ellas son.
+        {desc}
       </Text>
       <Tabs
         w="full"
         bg={useColorModeValue('white', 'inherit')}
         mt="10"
         orientation="vertical"
+        justifyContent="space-between"
       >
-        <TabList mt="2" dir="vetical" fontFamily="jet">
+        <TabList
+          mt="2"
+          dir="vetical"
+          fontFamily="jet"
+          w={{ base: '40%', md: 'xs' }}
+        >
           {headers.map(({ id, name, icon: Icon }) => (
             <Tab
-              fontSize={['2xs', 'md']}
+              fontSize={['12px', 'md']}
               _focus={{ outline: 'none' }}
               justifyContent="left"
               key={id}
@@ -112,17 +119,17 @@ const Skills = () => {
           ))}
         </TabList>
         <TabPanels>
-          {names.map(tech => (
-            <TabPanel p={{ base: '0', md: 'inherit' }} key={tech}>
+          {tools.map(tab => (
+            <TabPanel p={{ base: '0', md: 'inherit' }} key={tab}>
               <SimpleGrid
                 gridTemplateColumns={{
                   base: 'repeat(auto-fill, minmax(70px,80px))',
                   md: 'repeat(auto-fill, 130px)',
                 }}
                 spacing={['1', '2']}
-                justifyItems="center"
+                justifyContent="flex-end"
               >
-                {data[tech].map(item => (
+                {data[tab].map(item => (
                   <SkillCard key={item.id} item={item} />
                 ))}
               </SimpleGrid>
