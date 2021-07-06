@@ -49,14 +49,14 @@ const Project = ({ data, index, type }) => {
       >
         <Box p="4">
           <chakra.span
-            fontSize="sm"
+            fontSize={{ base: 'xs', md: 'sm' }}
             fontFamily="jet"
             color="tomato"
             textTransform="capitalize"
           >
             {type}
           </chakra.span>
-          <Heading fontSize="2xl" maxW="2xs">
+          <Heading fontSize={{ base: 'xl', md: '2xl' }} maxW="2xs">
             {title}
           </Heading>
         </Box>

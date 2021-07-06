@@ -6,9 +6,9 @@ import AppContext from '../context/context';
 
 const Contact = () => {
   const { contact } = useContext(AppContext);
-  const { desc } = contact;
+  const { desc, title } = contact;
   return (
-    <Container title="Contact" index={6}>
+    <Container title={title} index={6}>
       <Box mt="5" textAlign="center">
         <Text maxW="2xl" mx="auto" my="4">
           {desc}

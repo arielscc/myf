@@ -268,7 +268,7 @@ const Education = () => {
   const handleToggle = () => setShow(!show);
 
   const { education } = useContext(AppContext);
-  const { title, univ, desc_u, desc_c, links } = education;
+  const { title, univ, desc_u: descU, desc_c: descC } = education;
   return (
     <Container title={title} index={2}>
       <Flex
@@ -284,11 +284,11 @@ const Education = () => {
           display={{ base: 'block' }}
           w={{ base: 'full', lg: '40%' }}
         >
-          <Heading fontSize="2xl" fontWeight="500">
+          <Heading fontSize={{ base: 'xl', md: '2xl' }} fontWeight="500">
             {univ}
           </Heading>
-          <Text mt="5">
-            {desc_u}
+          <Text mt="5" textAlign={{ base: 'justify', md: 'left' }}>
+            {descU}
             {/** Estudié la carrera de Informática en la{' '}
             <Link
               variant="secondary"
@@ -326,7 +326,7 @@ const Education = () => {
               target="_blank"
             >
               Congreso de Biotecnologia
-          </Link>**/}
+          </Link>* */}
           </Text>
         </Box>
 
@@ -336,7 +336,7 @@ const Education = () => {
           mt="5"
           w={{ base: 'full', lg: '50%' }}
         >
-          <Text textAlign="left">{desc_c}</Text>
+          <Text textAlign="left">{descC}</Text>
           <TabList>
             <Tab>
               <Icon
@@ -372,31 +372,29 @@ const Education = () => {
                 Udemy
               </Text>
             </Tab>
-          **/}
+          * */}
           </TabList>
           <TabPanels>
             <TabPanel px="0" py="4">
               <Collapse startingHeight={180} in={show}>
                 <List spacing={3} textAlign="left">
-                  {certs.univ.map(item => {
-                    return (
-                      <ListItem key={item.id} boxSizing="border-box">
-                        <ListIcon as={MdCheckCircle} color="green.500" />
-                        <CertModal item={item} />
-                      </ListItem>
-                    );
-                  })}
+                  {certs.univ.map(item => (
+                    <ListItem key={item.id} boxSizing="border-box">
+                      <ListIcon as={MdCheckCircle} color="green.500" />
+                      <CertModal item={item} />
+                    </ListItem>
+                  ))}
                 </List>
               </Collapse>
             </TabPanel>
             <TabPanel px="0" py="4">
               <Collapse startingHeight={180} in={show}>
                 <List spacing={3} textAlign="left">
-                  {certs.platzi.map(({ id, title, url }) => (
+                  {certs.platzi.map(({ id, title: titleCert, url }) => (
                     <ListItem key={id}>
                       <ListIcon as={MdCheckCircle} color="green.500" />
                       <Link href={url} target="_blank">
-                        {title}
+                        {titleCert}
                       </Link>
                     </ListItem>
                   ))}

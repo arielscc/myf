@@ -91,6 +91,7 @@ const en = {
     ],
   },
   contact: {
+    title: 'contact',
     desc: 'Hello again, If you want to build incredible things or want to contact me with any suggestions or questions you can send me an email, or an internal message on my social networks.',
   },
   footer: {

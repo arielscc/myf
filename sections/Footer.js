@@ -9,6 +9,7 @@ const Footer = () => {
     <HStack
       as="footer"
       h="24"
+      mt="10"
       bg={useColorModeValue('gray.50', 'gray.800')}
       justifyContent="center"
     >

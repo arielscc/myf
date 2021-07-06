@@ -17,9 +17,9 @@ import AppContext from '../context/context';
 
 const Experience = () => {
   const { experience } = useContext(AppContext);
-  const { job_a: jobA, job_b: jobB } = experience;
+  const { job_a: jobA, job_b: jobB, title } = experience;
   return (
-    <Container title="Experience" index={4}>
+    <Container title={title} index={4}>
       <Accordion defaultIndex={[0]} allowMultiple mt="10">
         <AccordionItem>
           <AccordionButton>

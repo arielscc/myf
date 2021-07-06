@@ -15,6 +15,7 @@ import {
   MenuItem,
   MenuButton,
   Tooltip,
+  Spacer,
 } from '@chakra-ui/react';
 import {
   FaSun,
@@ -62,7 +63,7 @@ const Header = ({ inview }) => {
       zIndex="modal"
       marginInlineStart="0px"
     >
-      <Flex w="5xl" justify="space-between">
+      <Flex w="5xl">
         <Link
           href="/"
           fontSize="xl"
@@ -71,18 +72,20 @@ const Header = ({ inview }) => {
           color="tomato"
           _hover={{ textDecoration: 'none' }}
           zIndex="modal"
+          mr="5"
         >
           ArielChura
         </Link>
-        <chakra.nav
+        <chakra.div
           fontFamily="jet"
           w="full"
           display={{ base: isOpen ? 'flex' : 'none', lg: 'flex' }}
           marginInlineStart="-0.5"
           flexDirection={{ base: 'column', lg: 'row' }}
           alignItems="center"
-          justifyContent={{ base: 'center', lg: 'center' }}
+          justifyContent="center"
           position={{ base: 'fixed', lg: 'inherit' }}
+          backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
           top="0"
           left="0"
           bottom="0"
@@ -93,7 +96,6 @@ const Header = ({ inview }) => {
             base: useColorModeValue(LightBlurMenuColor, 'rgba(0, 0, 0, .3)'),
             lg: 'none',
           }}
-          backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
         >
           {categories.map(category => (
             <Link
@@ -101,49 +103,51 @@ const Header = ({ inview }) => {
               textTransform="capitalize"
               variant="primary"
               key={category}
+              onClick={onToggle}
             >
               {category}
             </Link>
           ))}
-        </chakra.nav>
-        <HStack display={{ base: 'none', lg: 'inline-flex' }}>
-          <Tooltip hasArrow label="Github">
-            <IconButton
-              as={Link}
-              href="https://github.com/arielscc"
-              target="_blank"
-              rounded="md"
-              fontSize="lg"
-              icon={<FaGithub />}
-              variant="primary"
-              size="sm"
-            />
-          </Tooltip>
-          <Tooltip hasArrow label="Twitter">
-            <IconButton
-              as={Link}
-              href="https://twitter.com/arielschura"
-              target="_blank"
-              rounded="md"
-              fontSize="lg"
-              icon={<FaTwitter />}
-              variant="primary"
-              size="sm"
-            />
-          </Tooltip>
-          <Tooltip hasArrow label="Instagram">
-            <IconButton
-              as={Link}
-              href="https://instagram.com/arielchura"
-              target="_blank"
-              rounded="md"
-              fontSize="lg"
-              icon={<FaInstagram />}
-              variant="primary"
-              size="sm"
-            />
-          </Tooltip>
-        </HStack>
+          <Spacer display={{ base: 'none', xl: 'initial' }} />
+          <HStack justify="flex-start">
+            <Tooltip hasArrow label="Github">
+              <IconButton
+                as={Link}
+                href="https://github.com/arielscc"
+                target="_blank"
+                rounded="md"
+                fontSize="lg"
+                icon={<FaGithub />}
+                variant="primary"
+                size="sm"
+              />
+            </Tooltip>
+            <Tooltip hasArrow label="Twitter">
+              <IconButton
+                as={Link}
+                href="https://twitter.com/arielschura"
+                target="_blank"
+                rounded="md"
+                fontSize="lg"
+                icon={<FaTwitter />}
+                variant="primary"
+                size="sm"
+              />
+            </Tooltip>
+            <Tooltip hasArrow label="Instagram">
+              <IconButton
+                as={Link}
+                href="https://instagram.com/arielchura"
+                target="_blank"
+                rounded="md"
+                fontSize="lg"
+                icon={<FaInstagram />}
+                variant="primary"
+                size="sm"
+              />
+            </Tooltip>
+          </HStack>
+        </chakra.div>
       </Flex>
       <ButtonGroup
         variant="primary"

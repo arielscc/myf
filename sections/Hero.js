@@ -48,6 +48,9 @@ const Hero = ({ referencie }) => {
             Frontend Developer
           </Text>
           <Button
+            as="a"
+            href="/assets/resume.pdf"
+            target="_blank"
             leftIcon={<FaDownload />}
             variant="secondary"
             textTransform="capitalize"
