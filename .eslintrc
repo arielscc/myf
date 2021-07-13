@@ -23,5 +23,8 @@
     "Blob": true,
     "navigator": true
   },
+  "settings": {
+    "import/core-modules": ["@chakra-ui/theme-tools"]
+  },
   "parser": "babel-eslint"
 }

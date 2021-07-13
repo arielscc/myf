@@ -51,11 +51,13 @@ const Hero = ({ referencie }) => {
             as="a"
             href="/assets/resume.pdf"
             target="_blank"
+            rel="noopener"
             leftIcon={<FaDownload />}
             variant="secondary"
             textTransform="capitalize"
             w={{ base: 'full', lg: 'xs' }}
             mt="10"
+            role="button"
           >
             {button}
           </Button>

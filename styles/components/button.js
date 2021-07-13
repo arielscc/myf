@@ -1,6 +1,7 @@
-import { useColorModeValue } from '@chakra-ui/react';
+/* eslint-disable react/jsx-props-no-spreading */
 import { darken, whiten, mode } from '@chakra-ui/theme-tools';
-export const Button = {
+
+const Button = {
   // style object for base or default style
   baseStyle: {},
   // styles for different sizes ("sm", "md", "lg")
@@ -25,6 +26,7 @@ export const Button = {
       bg: 'tomato',
       w: 'full',
       rounded: 'full',
+      fontFamily: 'jet',
       _hover: {
         bg: mode(whiten('tomato', 20), darken('tomato', 10))(props),
         shadow: 'lg',
@@ -37,3 +39,5 @@ export const Button = {
     variant: '',
   },
 };
+
+export default Button;

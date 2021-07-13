@@ -3,6 +3,7 @@ import { Heading, Box, chakra } from '@chakra-ui/react';
 
 const Container = ({ children, title, index }) => (
   <Box
+    as="section"
     maxW="5xl"
     mx="auto"
     py={{ base: 'none', md: '14' }}

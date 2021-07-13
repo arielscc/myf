@@ -12,10 +12,10 @@ import {
   Flex,
   Menu,
   MenuList,
-  MenuItem,
   MenuButton,
   Tooltip,
-  Spacer,
+  MenuOptionGroup,
+  MenuItemOption,
 } from '@chakra-ui/react';
 import {
   FaSun,
@@ -48,11 +48,13 @@ const Header = ({ inview }) => {
       router.push(router.pathname, router.pathname, { locale: value });
     }
   };
+
   return (
-    <HStack
+    <Flex
       as="nav"
       bg={useColorModeValue(lightvalue, darkvalue)}
-      justify="center"
+      justify="space-between"
+      alignItems="center"
       shadow="md"
       transitionDelay=".04s"
       w="100%"
@@ -63,39 +65,47 @@ const Header = ({ inview }) => {
       zIndex="modal"
       marginInlineStart="0px"
     >
-      <Flex w="5xl">
-        <Link
-          href="/"
-          fontSize="xl"
-          fontWeight="800"
-          fontFamily="jet"
-          color="tomato"
-          _hover={{ textDecoration: 'none' }}
-          zIndex="modal"
-          mr="5"
-        >
-          ArielChura
-        </Link>
+      <Link
+        href="/"
+        fontSize="3xl"
+        fontWeight="bold"
+        fontFamily="script"
+        color="tomato"
+        _hover={{ textDecoration: 'none' }}
+        zIndex="modal"
+        mr="5"
+        letterSpacing="1px"
+      >
+        Ariel Chura
+      </Link>
+      <chakra.div
+        maxW={{ base: 'full', lg: '5xl' }}
+        display={{ base: isOpen ? 'flex' : 'none', lg: 'flex' }}
+        flexDirection={{ base: 'column', lg: 'row' }}
+        alignItems="center"
+        justifyContent="center"
+        position={{ base: 'fixed', lg: 'absolute' }}
+        top="0"
+        bottom="0"
+        left="0"
+        right="0"
+        zIndex="base"
+        mx="auto"
+        gridGap="12"
+        bg={{
+          base: useColorModeValue(LightBlurMenuColor, 'rgba(0, 0, 0, .3)'),
+          lg: 'none',
+        }}
+        backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
+      >
         <chakra.div
+          display="flex"
           fontFamily="jet"
-          w="full"
-          display={{ base: isOpen ? 'flex' : 'none', lg: 'flex' }}
-          marginInlineStart="-0.5"
           flexDirection={{ base: 'column', lg: 'row' }}
           alignItems="center"
-          justifyContent="center"
-          position={{ base: 'fixed', lg: 'inherit' }}
-          backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
-          top="0"
-          left="0"
-          bottom="0"
-          right="0"
-          zIndex="base"
-          gridGap="1"
-          bg={{
-            base: useColorModeValue(LightBlurMenuColor, 'rgba(0, 0, 0, .3)'),
-            lg: 'none',
-          }}
+          justifyContent={{ base: 'center', lg: 'flex-start' }}
+          w="full"
+          gridGap="4"
         >
           {categories.map(category => (
             <Link
@@ -108,81 +118,97 @@ const Header = ({ inview }) => {
               {category}
             </Link>
           ))}
-          <Spacer display={{ base: 'none', xl: 'initial' }} />
-          <HStack justify="flex-start">
-            <Tooltip hasArrow label="Github">
-              <IconButton
-                as={Link}
-                href="https://github.com/arielscc"
-                target="_blank"
-                rounded="md"
-                fontSize="lg"
-                icon={<FaGithub />}
-                variant="primary"
-                size="sm"
-              />
-            </Tooltip>
-            <Tooltip hasArrow label="Twitter">
-              <IconButton
-                as={Link}
-                href="https://twitter.com/arielschura"
-                target="_blank"
-                rounded="md"
-                fontSize="lg"
-                icon={<FaTwitter />}
-                variant="primary"
-                size="sm"
-              />
-            </Tooltip>
-            <Tooltip hasArrow label="Instagram">
-              <IconButton
-                as={Link}
-                href="https://instagram.com/arielchura"
-                target="_blank"
-                rounded="md"
-                fontSize="lg"
-                icon={<FaInstagram />}
-                variant="primary"
-                size="sm"
-              />
-            </Tooltip>
-          </HStack>
         </chakra.div>
-      </Flex>
-      <ButtonGroup
-        variant="primary"
-        size="sm"
-        position="absolute"
-        right="0"
-        pr="5"
-      >
-        <Menu>
-          <Tooltip hasArrow>
-            <MenuButton
+        <HStack justify="flex-start">
+          <Tooltip hasArrow label="Github">
+            <IconButton
+              as={Link}
+              href="https://github.com/arielscc"
+              target="_blank"
               rounded="md"
-              as={IconButton}
-              aria-label="Languages"
-              icon={<HiTranslate />}
+              fontSize="lg"
+              icon={<FaGithub />}
+              variant="primary"
+              size="sm"
+              aria-label="link to github"
+              rel="noopener"
             />
           </Tooltip>
+          <Tooltip hasArrow label="Twitter">
+            <IconButton
+              as={Link}
+              href="https://twitter.com/arielschura"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaTwitter />}
+              variant="primary"
+              size="sm"
+              aria-label="link to twitter"
+              rel="noopener"
+            />
+          </Tooltip>
+          <Tooltip hasArrow label="Instagram">
+            <IconButton
+              as={Link}
+              href="https://instagram.com/arielchura"
+              target="_blank"
+              rounded="md"
+              fontSize="lg"
+              icon={<FaInstagram />}
+              variant="primary"
+              size="sm"
+              aria-label="link to instagram"
+              rel="noopener"
+            />
+          </Tooltip>
+        </HStack>
+      </chakra.div>
+
+      <ButtonGroup variant="primary" size="sm" right="0">
+        <Menu>
+          <MenuButton
+            rounded="md"
+            as={IconButton}
+            icon={<HiTranslate />}
+            aria-label="select language"
+          />
           <MenuList>
-            <MenuItem onClick={() => handleChangeLanguage('es')}>ES</MenuItem>
-            <MenuItem onClick={() => handleChangeLanguage('en')}>EN</MenuItem>
+            <MenuOptionGroup
+              defaultValue={router.locale}
+              title="Language"
+              type="radio"
+            >
+              <MenuItemOption
+                value="es"
+                onClick={() => handleChangeLanguage('es')}
+              >
+                Español
+              </MenuItemOption>
+              <MenuItemOption
+                value="en"
+                onClick={() => handleChangeLanguage('en')}
+              >
+                English
+              </MenuItemOption>
+            </MenuOptionGroup>
           </MenuList>
         </Menu>
         <IconButton
           rounded="md"
           icon={<ColorModeIcon />}
           onClick={toggleColorMode}
+          aria-label="toggle color mode"
         />
         <IconButton
           rounded="md"
           icon={<Icon as={isOpen ? HiX : HiMenu} h="5" w="5" />}
           onClick={onToggle}
           display={{ base: 'inline-flex', lg: 'none' }}
+          aria-label="toggle menu"
         />
       </ButtonGroup>
-    </HStack>
+    </Flex>
   );
 };
 

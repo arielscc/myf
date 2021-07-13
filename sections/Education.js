@@ -379,7 +379,7 @@ const Education = () => {
               <Collapse startingHeight={180} in={show}>
                 <List spacing={3} textAlign="left">
                   {certs.univ.map(item => (
-                    <ListItem key={item.id} boxSizing="border-box">
+                    <ListItem key={item.id} boxSizing="border-box" href="#">
                       <ListIcon as={MdCheckCircle} color="green.500" />
                       <CertModal item={item} />
                     </ListItem>
@@ -393,7 +393,7 @@ const Education = () => {
                   {certs.platzi.map(({ id, title: titleCert, url }) => (
                     <ListItem key={id}>
                       <ListIcon as={MdCheckCircle} color="green.500" />
-                      <Link href={url} target="_blank">
+                      <Link href={url} target="_blank" rel="noopener">
                         {titleCert}
                       </Link>
                     </ListItem>

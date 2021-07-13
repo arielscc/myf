@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import AppContext from '../context/context';
 
 import About from '../sections/About';
@@ -27,6 +28,13 @@ export default function Home() {
 
   return (
     <AppContext.Provider value={values}>
+      <Head>
+        <title>Ariel Chura</title>
+        <meta
+          name="description"
+          content="Ariel Chura, Desarrollador web full stack, soy de La Paz Bolivia y me gusta construir cosas que viven en internet"
+        />
+      </Head>
       <Box
         bg={useColorModeValue('white', '#1b283d')}
         color={useColorModeValue('gray.700', 'gray.100')}

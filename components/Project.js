@@ -12,7 +12,7 @@ import {
   useColorModeValue,
   Link,
   Flex,
-  Wrap,
+  TagLabel,
 } from '@chakra-ui/react';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import Navigator from './Navigator';
@@ -73,13 +73,19 @@ const Project = ({ data, index, type }) => {
           </Text>
         </Box>
         <Box w={{ base: 'full', md: '60%', lg: '65%' }}>
-          <Wrap gridGap="2">
+          <Flex gridGap="2" wrap="wrap">
             {tags.map(tag => (
-              <Tag key={tag} size="md" variant="outline" colorScheme="cyan">
-                {tag}
+              <Tag
+                key={tag}
+                size="md"
+                variant="outline"
+                colorScheme="cyan"
+                marginInlineStart="-0.5"
+              >
+                <TagLabel>{tag}</TagLabel>
               </Tag>
             ))}
-          </Wrap>
+          </Flex>
           <HStack
             spacing="1"
             mt="4"
@@ -93,21 +99,27 @@ const Project = ({ data, index, type }) => {
               as={Link}
               href={github}
               target="_blank"
+              rel="noopener"
               size="md"
               variant="outline"
               colorScheme="blue"
               rounded="lg"
               icon={<VscGithubAlt size="20" />}
+              role="link"
+              aria-label="link to github"
             />
             <IconButton
               as={Link}
               href={live}
               target="_blank"
+              rel="noopener"
               size="md"
               variant="outline"
               colorScheme="blue"
               rounded="lg"
               icon={<VscLinkExternal size="20" />}
+              role="link"
+              aria-label="link to live project"
             />
           </HStack>
         </Box>

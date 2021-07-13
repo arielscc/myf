@@ -16,12 +16,7 @@ const CertModal = ({ item }) => {
   const { onOpen, onClose, isOpen } = useDisclosure();
   return (
     <>
-      <Link
-        onClick={onOpen}
-        target="_blank"
-        textAlign="left"
-        fontWeight="normal"
-      >
+      <Link onClick={onOpen} textAlign="left" fontWeight="normal">
         {title}
       </Link>
       <Modal

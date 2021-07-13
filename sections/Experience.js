@@ -24,7 +24,7 @@ const Experience = () => {
         <AccordionItem>
           <AccordionButton>
             <Text
-              as="h4"
+              as="h3"
               flex="1"
               textAlign="left"
               fontSize="lg"
@@ -53,7 +53,7 @@ const Experience = () => {
         <AccordionItem>
           <AccordionButton>
             <Text
-              as="h4"
+              as="h3"
               flex="1"
               textAlign="left"
               fontSize="lg"
