@@ -7,7 +7,7 @@ import AppContext from '../context/context';
 
 const Hero = ({ referencie }) => {
   const { hero } = useContext(AppContext);
-  const { greet, button, title } = hero;
+  const { greet, button, prof, title } = hero;
   return (
     <chakra.header
       ref={referencie}
@@ -45,7 +45,7 @@ const Hero = ({ referencie }) => {
             textColor="third"
             fontWeight="500"
           >
-            Frontend Developer
+            {prof}
           </Text>
           <Button
             as="a"

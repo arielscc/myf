@@ -15,6 +15,7 @@ const es = {
   hero: {
     title: 'inicio',
     greet: 'Hola, mi nombre es',
+    prof: 'Desarrollador Web',
     button: 'Descargar CV',
   },
   about: {

@@ -15,6 +15,7 @@ const en = {
   hero: {
     title: 'home',
     greet: 'Hi, my name is',
+    prof: 'Web Developer',
     button: 'Download Resume',
   },
   about: {
