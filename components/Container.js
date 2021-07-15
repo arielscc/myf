@@ -7,7 +7,6 @@ const Container = ({ children, title, index }) => (
     maxW="5xl"
     mx="auto"
     py={{ base: 'none', md: '14' }}
-    pt="14"
     px={{ base: '4', lg: 'none' }}
     id={title}
   >

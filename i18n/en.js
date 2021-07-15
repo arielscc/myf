@@ -20,7 +20,7 @@ const en = {
   about: {
     title: 'about',
     description:
-      "I'm computer science degree with mention in Systems Engineering. I specialize in building (and occasionally designing) exceptional digital experiences and building accessible human-centered products. Currently, I'm looking for professional growth opportunities as a frontend developer.",
+      'I am web developer with experience building digital products with different technologies. Currently my Stack of technologies has a JavaScript as main language, I like to develop solutions that meet high quality metrics in terms of performance, accessibility and good practices. I am looking for job opportunities to grow professionally with an innovation team to provide solutions to different problems.',
   },
   education: {
     title: 'education',

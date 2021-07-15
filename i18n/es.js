@@ -20,7 +20,7 @@ const es = {
   about: {
     title: 'acerca',
     description:
-      'Soy licenciado en informática con mención en Ingeniería de Sistemas. Me especializo en construir (y ocasionalmente diseñar) experiencias digitales excepcionales y construir productos accesibles centrados en las personas. Actualmente, estoy buscando oportunidades de crecimiento profesional como desarrollador web Frontend.',
+      'Soy desarrollador web con experiencia en la creación de productos digitales con distintas tecnologías. Actualmente mi Stack de tecnologías tiene como lenguaje principal a JavaScript, me gusta desarrollar soluciones que cumplan altas métricas de calidad tanto en rendimiento, accesibilidad y buenas prácticas. Busco oportunidades laborales para crecer profesionalmente junto a un equipo de innovación para dar soluciones a diferentes problemáticas.',
   },
   education: {
     title: 'educación',
