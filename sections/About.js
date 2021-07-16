@@ -1,4 +1,4 @@
-import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import Image from 'next/image';
 import profile from '../public/assets/profile.jpg';
@@ -17,13 +17,7 @@ const About = () => {
         alignItems="center"
         gridGap="5"
       >
-        <Box
-          border="2px"
-          borderColor={useColorModeValue('gray.500', 'gray.100')}
-          w="xs"
-          rounded="3xl"
-          overflow="hidden"
-        >
+        <Box w="xs" rounded="3xl" overflow="hidden" shadow="2xl">
           <Image src={profile} alt="profilees" layout="responsive" />
         </Box>
         <Text textAlign="justify" w={{ base: 'full', lg: 'lg' }}>
