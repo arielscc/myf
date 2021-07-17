@@ -3,7 +3,6 @@ import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/dist/client/router';
-import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
 
 import Header from '../sections/Header';
@@ -18,31 +17,10 @@ import Footer from '../sections/Footer';
 
 import AppContext from '../context/context';
 
-export const getStaticProps = async () => {
-  const [es, en] = await Promise.all([
-    fetch(`${process.env.API_HOST}/api/es`),
-    fetch(`${process.env.API_HOST}/api/en`),
-  ]);
-  const dataES = await es.json();
-  const dataEN = await en.json();
+import es from '../i18n/es';
+import en from '../i18n/en';
 
-  if (!dataES && !dataEN) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      data: {
-        es: dataES,
-        en: dataEN,
-      },
-    },
-  };
-};
-
-export default function Home({ data: { es, en } }) {
+export default function Home() {
   const { ref, inView } = useInView({
     threshold: 1,
   });
