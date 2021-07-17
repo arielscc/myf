@@ -1,3 +1,4 @@
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const es = {
   header: {
     categories: [
@@ -99,4 +100,6 @@ const es = {
   },
 };
 
-export default es;
+export default function content(req, res) {
+  res.status(200).json(es);
+}
