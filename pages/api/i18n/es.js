@@ -100,6 +100,4 @@ const es = {
   },
 };
 
-export default function content(req, res) {
-  res.status(200).json(es);
-}
+export default es;

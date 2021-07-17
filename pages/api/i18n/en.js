@@ -99,6 +99,4 @@ const en = {
   },
 };
 
-export default function content(req, res) {
-  res.status(200).json(en);
-}
+export default en;
