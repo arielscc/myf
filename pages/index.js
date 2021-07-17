@@ -1,24 +1,48 @@
 import React from 'react';
+
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/dist/client/router';
+import fetch from 'isomorphic-unfetch';
 import Head from 'next/head';
-import AppContext from '../context/context';
 
+import Header from '../sections/Header';
+import Hero from '../sections/Hero';
 import About from '../sections/About';
 import Education from '../sections/Education';
 import Experience from '../sections/Experience';
-import Header from '../sections/Header';
-import Hero from '../sections/Hero';
 import Skills from '../sections/Skills';
 import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
 import Footer from '../sections/Footer';
 
-import es from '../i18n/es';
-import en from '../i18n/en';
+import AppContext from '../context/context';
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const [es, en] = await Promise.all([
+    fetch(`${process.env.API_HOST}/api/es`),
+    fetch(`${process.env.API_HOST}/api/en`),
+  ]);
+  const dataES = await es.json();
+  const dataEN = await en.json();
+
+  if (!dataES && !dataEN) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      data: {
+        es: dataES,
+        en: dataEN,
+      },
+    },
+  };
+};
+
+export default function Home({ data: { es, en } }) {
   const { ref, inView } = useInView({
     threshold: 1,
   });

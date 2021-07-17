@@ -1,15 +1,14 @@
-export const categories = [
-  'inicio',
-  'acerca',
-  'educación',
-  'experiencia',
-  'habilidades',
-  'proyectos',
-  'contacto',
-];
 const es = {
   header: {
-    categories,
+    categories: [
+      'inicio',
+      'acerca',
+      'educación',
+      'experiencia',
+      'habilidades',
+      'proyectos',
+      'contacto',
+    ],
     icons: ['github', 'twitter', 'instagram', 'idiomas', 'darkmode'],
   },
   hero: {
