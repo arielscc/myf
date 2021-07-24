@@ -1,11 +1,8 @@
 import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
-import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
-
-import es from '../i18n/es';
-import en from '../i18n/en';
+import { useRouter } from 'next/dist/client/router';
 
 import Header from '../sections/Header';
 import Hero from '../sections/Hero';
@@ -17,6 +14,9 @@ import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
 import Footer from '../sections/Footer';
 import AppContext from '../context/context';
+
+import es from '../i18n/es';
+import en from '../i18n/en';
 
 export default function Home() {
   const { ref, inView } = useInView({

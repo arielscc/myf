@@ -1,5 +1,5 @@
-import es from './es';
-import en from './en';
+import es from '../../../i18n/es';
+import en from '../../../i18n/en';
 
 export default function content(req, res) {
   const data = {

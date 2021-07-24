@@ -19,7 +19,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Platzi Badges',
+      title: 'Gif App',
       desc: 'En este proyecto se implementan los fundamentos de ReactJs como manejo de estado, useEffect, Peticiones, Asincronismo y más. Esta realizado haciendo uso de TailwindCss para el frontend y se trata de un buscador de imágenes gifs, el cual devuelve 10 imágenes relacionadas a la búsqueda.',
       links: {
         github: 'https://github.com/arielscc/react-GifApp',
@@ -29,7 +29,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Platzi Badges',
+      title: 'Heroes App',
       desc: 'Este proyecto fue creado usando React y TailwindCss, Se trata de un pequeño SPA que tiene integrado conceptos de react-router e implementa la seguridad y protección de rutas.',
       links: {
         github: 'https://github.com/arielscc/heroes-app',

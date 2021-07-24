@@ -26,7 +26,7 @@ const Hero = ({ referencie }) => {
         direction={{ base: 'column', lg: 'row' }}
         justifyContent={{ base: 'center', lg: 'space-between' }}
         h="full"
-        maxW="8xl"
+        maxW={{ lg: '5xl', xl: '8xl' }}
         m="auto"
         px={{ base: '4', lg: 'none' }}
       >
@@ -34,7 +34,10 @@ const Hero = ({ referencie }) => {
           <chakra.span fontFamily="jet" color="tomato" fontSize="lg">
             👋🏻 {greet}
           </chakra.span>
-          <Heading as="h1" fontSize={['5xl', '6xl', '7xl', '8xl']}>
+          <Heading
+            as="h1"
+            fontSize={['3xl', '4xl', '5xl', '6xl', '7xl', '8xl']}
+          >
             Ariel Chura
           </Heading>
           <Text

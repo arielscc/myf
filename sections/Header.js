@@ -24,8 +24,11 @@ import {
   FaTwitter,
   FaInstagram,
 } from 'react-icons/fa';
+import Image from 'next/image';
+
 import { HiMenu, HiX, HiTranslate } from 'react-icons/hi';
 import { useRouter } from 'next/dist/client/router';
+import Logo from '../public/assets/logo.svg';
 import AppContext from '../context/context';
 
 const Header = ({ inview }) => {
@@ -65,21 +68,11 @@ const Header = ({ inview }) => {
       zIndex="modal"
       marginInlineStart="0px"
     >
-      <Link
-        href="/"
-        fontSize="3xl"
-        fontWeight="bold"
-        fontFamily="script"
-        color="tomato"
-        _hover={{ textDecoration: 'none' }}
-        zIndex="modal"
-        mr="5"
-        letterSpacing="1px"
-      >
-        Ariel Chura
+      <Link href="/" zIndex="modal" variant="primary">
+        <Image src={Logo} width={20} height={20} />
       </Link>
       <chakra.div
-        maxW={{ base: 'full', lg: '5xl' }}
+        maxW={{ base: 'full', lg: '3xl', xl: '5xl' }}
         display={{ base: isOpen ? 'flex' : 'none', lg: 'flex' }}
         flexDirection={{ base: 'column', lg: 'row' }}
         alignItems="center"
@@ -105,7 +98,7 @@ const Header = ({ inview }) => {
           alignItems="center"
           justifyContent={{ base: 'center', lg: 'flex-start' }}
           w="full"
-          gridGap="4"
+          gridGap={{ lg: '2', xl: '4' }}
         >
           {categories.map(category => (
             <Link
