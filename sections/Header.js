@@ -60,7 +60,7 @@ const Header = ({ inview }) => {
       alignItems="center"
       shadow="md"
       transitionDelay=".04s"
-      w="100%"
+      w="full"
       position="fixed"
       py={padding}
       transition=".5s"
@@ -68,7 +68,7 @@ const Header = ({ inview }) => {
       zIndex="modal"
       marginInlineStart="0px"
     >
-      <Link href="/" zIndex="modal" variant="primary">
+      <Link href="/">
         <Image src={Logo} width={20} height={20} />
       </Link>
       <chakra.div
