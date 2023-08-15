@@ -1,85 +1,112 @@
-import React, { useContext } from 'react';
 import {
-  Text,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  useColorModeValue,
   SimpleGrid,
-  Table,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+  useColorModeValue
 } from '@chakra-ui/react';
+import React, { useContext } from 'react';
+import { BiLibrary, BiLogoAws } from 'react-icons/bi';
 import {
   DiCss3,
   DiHtml5,
   DiPhotoshop,
   DiReact,
-  DiTerminal,
-  DiDatabase,
+  DiTerminal
 } from 'react-icons/di';
+import { FaCode, FaPaintBrush, FaTools } from 'react-icons/fa';
+import { RiReactjsLine } from 'react-icons/ri';
 import {
   SiApollographql,
+  SiBitbucket,
+  SiDatagrip,
   SiDocker,
+  SiExpress,
   SiFigma,
   SiGit,
+  SiGithub,
+  SiGnubash,
   SiGraphql,
   SiInkscape,
   SiJavascript,
   SiJest,
   SiLaravel,
-  SiMysql,
-  SiNodeDotJs,
-  SiPhp,
-  SiPostgresql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostman,
+  SiReactquery,
+  SiRedux,
+  SiRuby,
+  SiRubyonrails,
+  SiSourcetree,
   SiTailwindcss,
-  SiVisualstudio,
+  SiTypescript,
+  SiVisualstudio
 } from 'react-icons/si';
-import { FaCode, FaPaintBrush, FaTools } from 'react-icons/fa';
-import { CgWebsite } from 'react-icons/cg';
-import Chakra from '../icons/Chakra';
-import SkillCard from '../components/SkillCard';
+import { TbSql } from 'react-icons/tb';
 import Container from '../components/Container';
+import SkillCard from '../components/SkillCard';
 import AppContext from '../context/context';
+import Chakra from '../icons/Chakra';
+
+
+const data = {
+  languages: [
+    { title: 'javascript', Icon: SiJavascript },
+    { title: 'typescript', Icon: SiTypescript },
+    { title: 'sql', Icon: TbSql },
+    { title: 'bash', Icon: SiGnubash },
+    { title: 'ruby', Icon: SiRuby },
+    { title: 'html', Icon: DiHtml5 },
+    { title: 'css', Icon: DiCss3 },
+  ],
+  "libraries & frameworks": [
+    { title: 'reactjs', Icon: DiReact },
+    { title: 'react native', Icon: DiReact },
+    { title: 'redux', Icon: SiRedux },
+    { title: 'react query', Icon: SiReactquery },
+    { title: 'node', Icon: SiNodedotjs },
+    { title: 'nextjs', Icon: SiNextdotjs },
+    { title: 'tailwindcss', Icon: SiTailwindcss },
+    { title: 'chakra ui', Icon: Chakra },
+    { title: 'jest', Icon: SiJest },
+    { title: 'apollo', Icon: SiApollographql },
+    { title: 'graphql', Icon: SiGraphql },
+    { title: 'express', Icon: SiExpress },
+    { title: 'laravel', Icon: SiLaravel },
+    { title: 'ruby on rails', Icon: SiRubyonrails },
+
+  ],
+  tools: [
+    { title: 'git', Icon: SiGit },
+    { title: 'docker', Icon: SiDocker },
+    { title: 'terminal', Icon: DiTerminal },
+    { title: 'aws', Icon: BiLogoAws },
+    { title: 'vscode', Icon: SiVisualstudio },
+    { title: 'github', Icon: SiGithub },
+    { title: 'bitbucket', Icon: SiBitbucket },
+    { title: 'reactotron', Icon: RiReactjsLine },
+    { title: 'postman', Icon: SiPostman },
+    // { title: 'mixpanel', Icon: TbBrandMixpanel },
+    // { title: 'datadog', Icon: SiDatadog },
+    { title: 'sourcetree', Icon: SiSourcetree },
+    { title: 'data grip', Icon: SiDatagrip },
+  ],
+  design: [
+    { title: 'inkscape', Icon: SiInkscape },
+    { title: 'photoshop', Icon: DiPhotoshop },
+    { title: 'figma', Icon: SiFigma },
+  ]
+}
 
 const Skills = () => {
-  const data = {
-    frontend: [
-      { id: 1, title: 'html', Icon: DiHtml5 },
-      { id: 2, title: 'css', Icon: DiCss3 },
-      { id: 3, title: 'javascript', Icon: SiJavascript },
-      { id: 4, title: 'reactjs', Icon: DiReact },
-      { id: 5, title: 'tailwindcss', Icon: SiTailwindcss },
-      { id: 8, title: 'chakraui', Icon: Chakra },
-      { id: 7, title: 'jest', Icon: SiJest },
-    ],
-    backend: [
-      { id: 1, title: 'php', Icon: SiPhp },
-      { id: 2, title: 'laravel', Icon: SiLaravel },
-      { id: 4, title: 'node', Icon: SiNodeDotJs },
-      { id: 5, title: 'graphql', Icon: SiGraphql },
-      { id: 6, title: 'apollo', Icon: SiApollographql },
-    ],
-    databases: [
-      { id: 1, title: 'postgresql', Icon: SiPostgresql },
-      { id: 2, title: 'mysql', Icon: SiMysql },
-    ],
-    design: [
-      { id: 1, title: 'inkscape', Icon: SiInkscape },
-      { id: 2, title: 'photoshop', Icon: DiPhotoshop },
-      { id: 3, title: 'figma', Icon: SiFigma },
-    ],
-    tools: [
-      { id: 1, title: 'terminal', Icon: DiTerminal },
-      { id: 2, title: 'VSCode', Icon: SiVisualstudio },
-      { id: 3, title: 'git', Icon: SiGit },
-      { id: 4, title: 'docker', Icon: SiDocker },
-    ],
-  };
-  const tools = Object.keys(data);
+  const skillsList = Object.keys(data);
   const { skills } = useContext(AppContext);
   const { title, tabs, desc } = skills;
-  const icons = [CgWebsite, FaCode, DiDatabase, FaPaintBrush, FaTools];
+  const icons = [FaCode, BiLibrary, FaTools, FaPaintBrush];
   const headers = tabs.map((item, i) => ({
     id: i,
     name: item,
@@ -88,26 +115,27 @@ const Skills = () => {
 
   return (
     <Container title={title} index={3}>
-      <Text mt="10" maxW="xl">
-        {desc}
-      </Text>
       <Tabs
         w="full"
         bg={useColorModeValue('white', 'inherit')}
-        mt="10"
         orientation="vertical"
         justifyContent="space-between"
+        marginBottom={{ base: '8', md: '0' }}
       >
         <TabList
           mt="2"
           dir="vetical"
           fontFamily="jet"
-          w={{ base: '40%', md: 'xs' }}
+          w={{ base: '60%', md: 'sm' }}
+          border={0}
         >
           {headers.map(({ id, name, icon: Icon }) => (
             <Tab
               fontSize={['12px', 'md']}
+              textColor={useColorModeValue('blue.600', 'gray.400')}
               _focus={{ outline: 'none' }}
+              _selected={{ color: 'white', bg: 'tomato', opacity: '.8' }}
+              _active={{ bg: 'tomato', opacity: '0.7' }}
               justifyContent="left"
               key={id}
             >
@@ -119,8 +147,8 @@ const Skills = () => {
           ))}
         </TabList>
         <TabPanels>
-          {tools.map(tab => (
-            <TabPanel p={{ base: '0', md: 'inherit' }} key={tab}>
+          {skillsList.map((tab, index) => (
+            <TabPanel p={{ base: '0', md: 'inherit' }} key={index}>
               <SimpleGrid
                 gridTemplateColumns={{
                   base: 'repeat(auto-fill, minmax(70px,80px))',
@@ -129,8 +157,8 @@ const Skills = () => {
                 spacing={['1', '2']}
                 justifyContent="flex-end"
               >
-                {data[tab].map(item => (
-                  <SkillCard key={item.id} item={item} />
+                {data[tab].map((item, index) => (
+                  <SkillCard key={index} item={item} />
                 ))}
               </SimpleGrid>
             </TabPanel>
