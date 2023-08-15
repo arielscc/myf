@@ -17,16 +17,14 @@ const SkillCard = ({ item }) => {
       w="full"
       boxShadow="md"
       rounded="lg"
-      cursor="pointer"
       textAlign="center"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 1 }}
     >
       <Icon as={Icono} boxSize="50%" />
       <Text
         fontSize={['xs', 'xs', 'sm', 'inherit']}
         mt={['2', '4']}
         textTransform="capitalize"
+        userSelect={'none'}
       >
         {title}
       </Text>
