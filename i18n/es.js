@@ -33,7 +33,7 @@ const es = {
   skills: {
     title: 'habilidades',
     desc: 'En mis tiempos libres pude capacitarme en diferentes tecnologias, algunas de ellas son.',
-    tabs: ['front-end', 'back-end', 'base de datos', 'diseño', 'herramientas'],
+    tabs: ['lenguajes', 'librerias', 'herramientas', 'diseño'],
   },
   experience: {
     title: 'experiencia',

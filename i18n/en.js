@@ -34,7 +34,7 @@ const en = {
   skills: {
     title: 'skills',
     desc: 'In my free time. I was able to train in different technologies, some of them are.',
-    tabs: ['front-end', 'back-end', 'data bases', 'design', 'tools'],
+    tabs: ['languages', 'libraries', 'tools', 'design'],
   },
   experience: {
     title: 'experience',
