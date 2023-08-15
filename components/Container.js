@@ -1,12 +1,12 @@
+import { Box, Heading, chakra } from '@chakra-ui/react';
 import React from 'react';
-import { Heading, Box, chakra } from '@chakra-ui/react';
 
 const Container = ({ children, title, index }) => (
   <Box
     as="section"
     maxW="5xl"
     mx="auto"
-    py={{ base: 'none', md: '14' }}
+    pt={{ base: '8', md: '14' }}
     px={{ base: '4', lg: 'none' }}
     id={title}
   >
