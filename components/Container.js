@@ -6,7 +6,7 @@ const Container = ({ children, title, index }) => (
     as="section"
     maxW="5xl"
     mx="auto"
-    pt={{ base: '8', md: '14' }}
+    pb={{ base: '8', md: '14' }}
     px={{ base: '4', lg: 'none' }}
     id={title}
   >
