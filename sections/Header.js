@@ -49,7 +49,7 @@ const Header = ({ inview }) => {
   return (
     <Flex
       as="nav"
-      bg={useColorModeValue('white', 'linear-gradient(to right, #0f0c29, #012a4a, #24243e)')}
+      bg={useColorModeValue('white', 'linear-gradient(to right, #080617, #002c4e, #171725)')}
       justify="space-between"
       alignItems="center"
       shadow="md"

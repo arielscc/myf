@@ -36,7 +36,7 @@ export default function Home() {
         />
       </Head>
       <Box
-        bg={useColorModeValue('white', 'linear-gradient(to right, #0f0c29, #012a4a, #24243e);')}
+        bg={useColorModeValue('white', 'linear-gradient(to right, #080617, #002c4e, #171725);')}
         color={useColorModeValue('gray.700', 'gray.100')}
         transitionDelay=".05s"
         fontFamily="montse"
