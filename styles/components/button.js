@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { darken, whiten, mode } from '@chakra-ui/theme-tools';
+import { darken, mode, whiten } from '@chakra-ui/theme-tools';
 
 const Button = {
   // style object for base or default style
@@ -9,14 +9,16 @@ const Button = {
   // styles for different visual variants ("outline", "solid")
   variants: {
     primary: props => ({
-      color: mode('white', 'cyan')(props),
+      color: mode('gray.600', 'white')(props),
 
       fontSize: 'sm',
       _hover: {
-        bg: mode(whiten('tomato', 20), darken('gray.600', 15))(props),
+        bg: mode(whiten('secondary', 15), darken('tomato', 10))(props),
+        color: mode('white', 'white')(props),
       },
       _focus: {
-        bg: mode(whiten('tomato', 0), darken('gray.600', 15))(props),
+        bg: mode(whiten('secondary', 20), darken('tomato', 15))(props),
+        color: mode('white', 'white')(props),
       },
     }),
     secondary: props => ({

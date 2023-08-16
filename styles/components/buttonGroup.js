@@ -1,4 +1,4 @@
-export const ButtonGroup = {
+const ButtonGroup = {
   // style object for base or default style
   baseStyle: {},
   // styles for different sizes ("sm", "md", "lg")
@@ -15,3 +15,5 @@ export const ButtonGroup = {
     variant: '',
   },
 };
+
+export default ButtonGroup;
