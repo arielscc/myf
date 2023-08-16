@@ -24,7 +24,7 @@ const SkillCard = ({ item }) => {
         fontSize={['xs', 'xs', 'sm', 'inherit']}
         mt={['2', '4']}
         textTransform="capitalize"
-        userSelect={'none'}
+        userSelect='none'
       >
         {title}
       </Text>
