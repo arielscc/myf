@@ -2,7 +2,6 @@ const es = {
   header: {
     categories: [
       'inicio',
-      'acerca',
       'educación',
       'experiencia',
       'habilidades',
@@ -14,21 +13,18 @@ const es = {
   hero: {
     title: 'inicio',
     greet: 'Hola, mi nombre es',
-    prof: 'Desarrollador Web',
+    prof: 'Software Engineer',
     button: 'Descargar CV',
-  },
-  about: {
-    title: 'acerca',
-    description:
-      'Soy desarrollador web con experiencia en la creación de productos digitales con distintas tecnologías. Actualmente mi Stack de tecnologías tiene como lenguaje principal a JavaScript, me gusta desarrollar soluciones que cumplan altas métricas de calidad tanto en rendimiento, accesibilidad y buenas prácticas. Busco oportunidades laborales para crecer profesionalmente junto a un equipo de innovación para dar soluciones a diferentes problemáticas.',
+    description: 'Ingeniero con más de tres años de experiencia en desarrollo de productos, especializado en JavaScript, TypeScript y NodeJS. Mi enfoque es ofrecer soluciones de alta calidad en rendimiento, accesibilidad y buenas prácticas.',
   },
   education: {
     title: 'educación',
-    univ: 'Carrera de Informática - UMSA',
     desc_u:
-      'Estudié la carrera de Informática en la Universidad Mayor de San Andrés, donde participe en varios eventos académicos como grupos de estudio y en eventos realizados por la facultad, como Festicyt-UMSA. También participe en la organización de varios eventos académicos, como las Olimpiadas Escolares/2018-2019 y en el Congreso de Biotecnología-2019.',
+      'Licenciatura en Informática, mención en ingeniería de sistemas informáticos',
+    desc_u2: "Facultad de Ciencias Puras y Naturalés, Universidad Mayor de San Andrés",
+    desc_u3: "La Paz - Bolivia, 2020",
     desc_c:
-      'Durante mi formación, también logré obtener algunas certificaciones dentro de la universidad y en plataformas en línea.',
+      'Durante mi formación, logré certificaciones dentro de la universidad y en plataformas en línea.',
   },
   skills: {
     title: 'habilidades',
