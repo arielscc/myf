@@ -5,7 +5,6 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import AppContext from '../context/context';
-import About from '../sections/About';
 import Contact from '../sections/Contact';
 import Education from '../sections/Education';
 import Experience from '../sections/Experience';
@@ -44,7 +43,6 @@ export default function Home() {
       >
         <Header inview={inView} />
         <Hero referencie={ref} />
-        <About />
         <Education />
         <Skills />
         <Experience />
