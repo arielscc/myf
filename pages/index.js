@@ -1,22 +1,22 @@
-import React from 'react';
 import { Box, useColorModeValue } from '@chakra-ui/react';
-import { useInView } from 'react-intersection-observer';
-import Head from 'next/head';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
-import Header from '../sections/Header';
-import Hero from '../sections/Hero';
+import AppContext from '../context/context';
 import About from '../sections/About';
+import Contact from '../sections/Contact';
 import Education from '../sections/Education';
 import Experience from '../sections/Experience';
-import Skills from '../sections/Skills';
-import Projects from '../sections/Projects';
-import Contact from '../sections/Contact';
 import Footer from '../sections/Footer';
-import AppContext from '../context/context';
+import Header from '../sections/Header';
+import Hero from '../sections/Hero';
+import Projects from '../sections/Projects';
+import Skills from '../sections/Skills';
 
-import es from '../i18n/es';
 import en from '../i18n/en';
+import es from '../i18n/es';
 
 export default function Home() {
   const { ref, inView } = useInView({
@@ -36,7 +36,7 @@ export default function Home() {
         />
       </Head>
       <Box
-        bg={useColorModeValue('white', '#1b283d')}
+        bg={useColorModeValue('white', 'linear-gradient(to right, #0f0c29, #012a4a, #24243e);')}
         color={useColorModeValue('gray.700', 'gray.100')}
         transitionDelay=".05s"
         fontFamily="montse"
