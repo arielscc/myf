@@ -1,7 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 import Button from './components/button';
-import { Link } from './components/link';
-import { ButtonGroup } from './components/buttonGroup';
+import ButtonGroup from './components/buttonGroup';
+import Link from './components/link';
 
 const theme = extendTheme({
   fonts: {

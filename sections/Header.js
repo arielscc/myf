@@ -1,47 +1,41 @@
-import React, { useContext } from 'react';
 import {
-  HStack,
-  chakra,
   ButtonGroup,
+  Flex,
+  HStack,
+  Icon,
+  IconButton,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItemOption,
+  MenuList,
+  MenuOptionGroup,
+  Tooltip,
+  chakra,
   useColorMode,
   useColorModeValue,
-  IconButton,
-  Icon,
   useDisclosure,
-  Link,
-  Flex,
-  Menu,
-  MenuList,
-  MenuButton,
-  Tooltip,
-  MenuOptionGroup,
-  MenuItemOption,
 } from '@chakra-ui/react';
-import {
-  FaSun,
-  FaMoon,
-  FaGithub,
-  FaTwitter,
-  FaInstagram,
-} from 'react-icons/fa';
 import Image from 'next/image';
+import React, { useContext } from 'react';
+import {
+  FaGithub,
+  FaInstagram,
+  FaMoon,
+  FaSun,
+  FaTwitter,
+} from 'react-icons/fa';
 
-import { HiMenu, HiX, HiTranslate } from 'react-icons/hi';
 import { useRouter } from 'next/dist/client/router';
-import Logo from '../public/assets/logo.svg';
+import { HiMenu, HiTranslate, HiX } from 'react-icons/hi';
 import AppContext from '../context/context';
+import Logo from '../public/assets/logo.svg';
 
 const Header = ({ inview }) => {
-  const ColorModeIcon = useColorModeValue(FaMoon, FaSun);
+  const ThemeIcon = useColorModeValue(FaMoon, FaSun);
   const { isOpen, onToggle } = useDisclosure();
   const { toggleColorMode } = useColorMode();
-  const lightvalue = inview ? 'rgba(255,255,255,0.1)' : '#000032';
-  const darkvalue = inview ? 'rgba(26, 32, 44, .7)' : 'gray.800';
   const padding = inview ? '4' : '2';
-  const LightBlurMenuColor = inview
-    ? 'rgba(255, 255, 255, .1)'
-    : 'rgba(0, 0, 50, .7)';
-
   const { header } = useContext(AppContext);
   const { categories } = header;
 
@@ -55,7 +49,7 @@ const Header = ({ inview }) => {
   return (
     <Flex
       as="nav"
-      bg={useColorModeValue(lightvalue, darkvalue)}
+      bg={useColorModeValue('white', 'linear-gradient(to right, #0f0c29, #012a4a, #24243e)')}
       justify="space-between"
       alignItems="center"
       shadow="md"
@@ -67,6 +61,8 @@ const Header = ({ inview }) => {
       px="5"
       zIndex="modal"
       marginInlineStart="0px"
+      border="1px"
+      borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
       <Link href="/">
         <Image src={Logo} width={20} height={20} />
@@ -86,7 +82,7 @@ const Header = ({ inview }) => {
         mx="auto"
         gridGap="12"
         bg={{
-          base: useColorModeValue(LightBlurMenuColor, 'rgba(0, 0, 0, .3)'),
+          base: useColorModeValue('rgba(255, 255, 255, .8)', 'rgba(0, 0, 0, .3)'),
           lg: 'none',
         }}
         backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
@@ -104,7 +100,7 @@ const Header = ({ inview }) => {
             <Link
               href={`#${category}`}
               textTransform="capitalize"
-              variant="primary"
+              variant='primary'
               key={category}
               onClick={onToggle}
             >
@@ -189,7 +185,7 @@ const Header = ({ inview }) => {
         </Menu>
         <IconButton
           rounded="md"
-          icon={<ColorModeIcon />}
+          icon={<ThemeIcon />}
           onClick={toggleColorMode}
           aria-label="toggle color mode"
         />
