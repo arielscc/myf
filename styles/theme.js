@@ -19,8 +19,10 @@ const theme = extendTheme({
     ButtonGroup,
     Link,
   },
-  initialColorMode: 'dark',
-  useSystemColorMode: false,
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
 });
 
 export default theme;
