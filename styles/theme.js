@@ -19,6 +19,8 @@ const theme = extendTheme({
     ButtonGroup,
     Link,
   },
+  lColorMode: 'light',
+  useSystemColorMode: false,
 });
 
 export default theme;
