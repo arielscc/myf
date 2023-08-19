@@ -10,8 +10,10 @@ const Footer = () => {
       as="footer"
       h="24"
       mt="10"
-      bg={useColorModeValue('gray.50', 'gray.800')}
       justifyContent="center"
+      shadow="lg"
+      border="1px"
+      borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
       <Text fontSize="sm" fontFamily="jet" px="5" textAlign="center">
         {desc}

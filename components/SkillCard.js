@@ -10,7 +10,7 @@ const SkillCard = ({ item }) => {
       key={title}
       border="1px"
       borderColor={useColorModeValue('gray.200', 'gray.600')}
-      bg={useColorModeValue('white', 'gray.700')}
+      bg={useColorModeValue('white', 'rgba(45, 55, 72, .3)')}
       maxW={['20', '32']}
       maxH={['20', '32']}
       py={['3', '4']}

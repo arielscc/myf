@@ -105,7 +105,8 @@ const data = {
 const Skills = () => {
   const skillsList = Object.keys(data);
   const { skills } = useContext(AppContext);
-  const { title, tabs, desc } = skills;
+  const tabStyleColor = useColorModeValue('blue.600', 'gray.400')
+  const { title, tabs } = skills;
   const icons = [FaCode, BiLibrary, FaTools, FaPaintBrush];
   const headers = tabs.map((item, i) => ({
     id: i,
@@ -114,7 +115,7 @@ const Skills = () => {
   }));
 
   return (
-    <Container title={title} index={3}>
+    <Container title={title} index={1}>
       <Tabs
         w="full"
         bg={useColorModeValue('white', 'inherit')}
@@ -132,7 +133,7 @@ const Skills = () => {
           {headers.map(({ id, name, icon: Icon }) => (
             <Tab
               fontSize={['12px', 'md']}
-              textColor={useColorModeValue('blue.600', 'gray.400')}
+              textColor={tabStyleColor}
               _focus={{ outline: 'none' }}
               _selected={{ color: 'white', bg: 'tomato', opacity: '.8' }}
               _active={{ bg: 'tomato', opacity: '0.7' }}
@@ -148,7 +149,7 @@ const Skills = () => {
         </TabList>
         <TabPanels>
           {skillsList.map((tab, index) => (
-            <TabPanel p={{ base: '0', md: 'inherit' }} key={index}>
+            <TabPanel p={{ base: '0', md: 'inherit' }} key={+index}>
               <SimpleGrid
                 gridTemplateColumns={{
                   base: 'repeat(auto-fill, minmax(70px,80px))',
@@ -157,8 +158,8 @@ const Skills = () => {
                 spacing={['1', '2']}
                 justifyContent="flex-end"
               >
-                {data[tab].map((item, index) => (
-                  <SkillCard key={index} item={item} />
+                {data[tab].map((item, i) => (
+                  <SkillCard key={+i} item={item} />
                 ))}
               </SimpleGrid>
             </TabPanel>
