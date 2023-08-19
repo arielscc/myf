@@ -277,8 +277,6 @@ const Education = () => {
         justify="space-between"
       >
         <Box
-          colSpan="2"
-          rowSpan="1"
           textAlign="left"
           display={{ base: 'block' }}
           w={{ base: 'full', lg: '40%' }}

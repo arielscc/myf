@@ -20,4 +20,5 @@ const theme = extendTheme({
     Link,
   },
 });
+
 export default theme;

@@ -1,5 +1,5 @@
+import { Box, Button, Link, Text } from '@chakra-ui/react';
 import React, { useContext } from 'react';
-import { Box, Text, Button, Link } from '@chakra-ui/react';
 import { FiMail } from 'react-icons/fi';
 import Container from '../components/Container';
 import AppContext from '../context/context';
@@ -8,7 +8,7 @@ const Contact = () => {
   const { contact } = useContext(AppContext);
   const { desc, title } = contact;
   return (
-    <Container title={title} index={6}>
+    <Container title={title} index={4}>
       <Box mt="5" textAlign="center">
         <Text maxW="2xl" mx="auto" my="4">
           {desc}

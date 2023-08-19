@@ -1,9 +1,9 @@
+import { Box, Divider, SimpleGrid } from '@chakra-ui/react';
 import React, { useContext } from 'react';
-import { Divider, Box, SimpleGrid } from '@chakra-ui/react';
-import Project from '../components/Project';
-import Container from '../components/Container';
-import AppContext from '../context/context';
 import CardProject from '../components/CardProject';
+import Container from '../components/Container';
+import Project from '../components/Project';
+import AppContext from '../context/context';
 
 const Projects = () => {
   const datos = [
@@ -71,7 +71,7 @@ const Projects = () => {
   const { list_projects: listProjects } = useContext(AppContext);
   const { title, projects, type } = listProjects;
   return (
-    <Container title={title} index={5}>
+    <Container title={title} index={3}>
       {projects.map((project, i) => (
         <Box key={project.id}>
           <Project data={project} index={i} type={type} />
