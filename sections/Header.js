@@ -12,18 +12,15 @@ import {
   MenuOptionGroup,
   Tooltip,
   chakra,
-  useColorMode,
   useColorModeValue,
-  useDisclosure,
+  useDisclosure
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React, { useContext } from 'react';
 import {
   FaGithub,
-  FaInstagram,
-  FaMoon,
-  FaSun,
-  FaTwitter,
+  FaLinkedin,
+  FaTwitter
 } from 'react-icons/fa';
 
 import { useRouter } from 'next/dist/client/router';
@@ -32,9 +29,7 @@ import AppContext from '../context/context';
 import Logo from '../public/assets/logo.svg';
 
 const Header = ({ inview }) => {
-  const ThemeIcon = useColorModeValue(FaMoon, FaSun);
   const { isOpen, onToggle } = useDisclosure();
-  const { toggleColorMode } = useColorMode();
   const padding = inview ? '4' : '2';
   const { header } = useContext(AppContext);
   const { categories } = header;
@@ -137,14 +132,14 @@ const Header = ({ inview }) => {
               rel="noopener"
             />
           </Tooltip>
-          <Tooltip hasArrow label="Instagram">
+          <Tooltip hasArrow label="Linkedin">
             <IconButton
               as={Link}
-              href="https://instagram.com/arielchura"
+              href="https://linkedin.com/in/arielchura"
               target="_blank"
               rounded="md"
               fontSize="lg"
-              icon={<FaInstagram />}
+              icon={<FaLinkedin />}
               variant="primary"
               size="sm"
               aria-label="link to instagram"
@@ -183,12 +178,6 @@ const Header = ({ inview }) => {
             </MenuOptionGroup>
           </MenuList>
         </Menu>
-        <IconButton
-          rounded="md"
-          icon={<ThemeIcon />}
-          onClick={toggleColorMode}
-          aria-label="toggle color mode"
-        />
         <IconButton
           rounded="md"
           icon={<Icon as={isOpen ? HiX : HiMenu} h="5" w="5" />}
