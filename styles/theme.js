@@ -19,7 +19,7 @@ const theme = extendTheme({
     ButtonGroup,
     Link,
   },
-  lColorMode: 'light',
+  initialColorMode: 'dark',
   useSystemColorMode: false,
 });
 
