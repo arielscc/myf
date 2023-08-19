@@ -1,9 +1,7 @@
 const categories = [
   'home',
-  'about',
-  'education',
   'skills',
-  'experience',
+  'education',
   'projects',
   'contact',
 ];
@@ -13,23 +11,18 @@ const en = {
     icons: ['github', 'twitter', 'instagram', 'languages', 'darkmode'],
   },
   hero: {
-    title: 'home',
     greet: 'Hi, my name is',
-    prof: 'Web Developer',
-    button: 'Download Resume',
-  },
-  about: {
-    title: 'about',
-    description:
-      'I am web developer with experience building digital products with different technologies. Currently my Stack of technologies has a JavaScript as main language, I like to develop solutions that meet high quality metrics in terms of performance, accessibility and good practices. I am looking for job opportunities to grow professionally with an innovation team to provide solutions to different problems.',
+    prof: 'Software Engineer',
+    button: 'download resume',
+    description: 'Engineer with over three years of experience in digital product development, specialized in JavaScript, TypeScript, and NodeJS, and focused on delivering high-quality solutions in terms of performance, accessibility, and best practices.',
   },
   education: {
     title: 'education',
-    univ: 'Computer Science - UMSA',
-    desc_u:
-      'I studied computer science at the Universidad Mayor de San Andrés, where I participated in several academic events such as study groups and events held by the faculty, such as Festicyt-UMSA. Also participate in the organization of several academic events, such as the School Olympics/2018-2019 and the Congress of Biotechnology-2019.',
+    desc_u: `Bachelor's Degree in Computer Science with a specialization in Computer Systems Engineering`,
+    desc_u2: "Facultad de Ciencias Puras y Naturalés, Universidad Mayor de San Andrés",
+    desc_u3: "La Paz - Bolivia, 2020",
     desc_c:
-      'During my formation, I also managed to obtain some certifications within the university and on online platforms.',
+      'Durante mi formación, logré certificaciones dentro de la universidad y en plataformas en línea.',
   },
   skills: {
     title: 'skills',
@@ -37,17 +30,49 @@ const en = {
     tabs: ['languages', 'libraries', 'tools', 'design'],
   },
   experience: {
-    title: 'experience',
-    job_a: [
-      'Responsible for the support of the faculty administration systems',
-      'Responsible for network support and communication of the faculty',
-      'User interface design and graphic design',
-      'Database administration',
-    ],
-    job_b: [
-      'Responsible for the support of administration systems and resource management and correspondence',
-      'Responsible for the network and infrastructure support of the organization',
-    ],
+    title: 'experiencia',
+    content: [
+      {
+        title: 'Mobile Engineer / Full Stack',
+        company: 'Enara Health',
+        date: 'Aug/2021 - present (2y)',
+        description: `I'm a part of the mobile app development team and have contributed to multiple projects using various languages and technologies. Some of my responsibilities include:`,
+        country: 'California, USA',
+        roles: [
+          'Android/iOS App Developer (React Native) - Crafting Cross-Platform Mobile Experiences.',
+          'Web App Developer(React) - Implementing Features and Maintaining Intuitive User Interfaces.',
+          'Microservices Developer (Node.js) - Architecting Scalable.',
+          'Ruby on Rails Contributor - Adding Specific Features.',
+          'Android Native Module Developer - Expanding App Capabilities Through Native Integration.',
+          'Testing (React Native) - Ensuring Robust and Reliable Application Performance.',
+          'Maintained software performance with regular updates.'
+        ],
+
+      },
+      {
+        title: 'Frontend Developer / Tech Support',
+        company: 'Faculty of Pure and Natural Sciences',
+        date: 'Jan/2018 - Dec/2019 (2y)',
+        country: 'La Paz, BO',
+        roles: [
+          'User Interface Development -Developing user interfaces using HTML, CSS y JavaScript.',
+          'Support of the faculty systems.',
+          'UI Design and Graphic Design - Creating and proposing interfaces for systems.',
+          'Database Management - Generating required reports from databases.'
+        ],
+      },
+      {
+        title: 'System Manager',
+        company: 'Federation of Municipal Associations of Bolivia',
+        date: 'Jan/2017 - Dec/2017 (1y)',
+        country: 'La Paz, BO',
+        roles: [
+          'Systems Administrator and Tech Resource Management.',
+          'Network Administrator.'
+        ],
+      },
+
+    ]
   },
   list_projects: {
     title: 'projects',

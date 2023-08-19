@@ -2,9 +2,8 @@ const es = {
   header: {
     categories: [
       'inicio',
-      'educación',
-      'experiencia',
       'habilidades',
+      'educación',
       'proyectos',
       'contacto',
     ],
@@ -33,16 +32,46 @@ const es = {
   },
   experience: {
     title: 'experiencia',
-    job_a: [
-      'Responsable del soporte de los sistemas de administración de la facultad',
-      'Encargado de soporte de redes y comunicación de la facultad',
-      'Diseño de interfaces de usuario y Diseño grafico',
-      'Administración de base de datos',
-    ],
-    job_b: [
-      'Encargado del soporte de sistemas de administración y gestión de recursos y correspondencia',
-      'Encargado del soporte de redes e infraestructura de la organización',
-    ],
+    content: [
+      {
+        title: 'Mobile Engineer / Full Stack',
+        company: 'Enara Health',
+        date: 'Ago/2021 - Actualidad (2 años)',
+        description: 'Actualmente soy parte del equipo de desarrollo deaplicaciones móviles, pero también he contribuido en variosproyectos con diversos lenguajes y tecnologías. Algunas demis responsabilidades incluyen:',
+        country: 'California, USA',
+        roles: [
+          'Desarrollador de aplicaciones móviles multiplataforma paraAndroid/iOS (React Native).',
+          'Desarrollador de aplicaciones web (React) - implementación defunciones y mantenimiento de interfaces de usuario.',
+          'Desarrollador de Microservicios (Node.js) - ArquitecturaEscalable.',
+          'Desarrollador en proyectos Ruby on Rails - Adición defunciones específicas.',
+          'Desarrollo de módulos nativos para Android.'
+        ],
+
+      },
+      {
+        title: 'Frontend Developer / Tech Support',
+        company: 'Facultad de Ciencias Puras y Naturales',
+        date: 'Ene/2018 - Dic/2019 (2 años)',
+        country: 'La Paz, BO',
+        roles: [
+          'Responsable del soporte de los sistemas de administración de la facultad',
+          'Encargado de soporte de redes y comunicación de la facultad',
+          'Diseño de interfaces de usuario y Diseño grafico',
+          'Administración de base de datos',
+        ],
+      },
+      {
+        title: 'Encargado de sistemas',
+        company: 'Federacion de Asociaciones Municiapales de Bolivia',
+        date: 'Ene/2017 - Dic/2017 (1 año)',
+        country: 'La Paz, BO',
+        roles: [
+          'Encargado del soporte de sistemas de administración y gestión de recursos y correspondencia',
+          'Encargado del soporte de redes e infraestructura de la organización',
+        ],
+      },
+
+    ]
   },
   list_projects: {
     title: 'proyectos',
