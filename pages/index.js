@@ -1,9 +1,8 @@
-import { Box, useColorModeValue } from '@chakra-ui/react';
+import { Box, useColorMode, useColorModeValue } from '@chakra-ui/react';
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-
 import AppContext from '../context/context';
 import Contact from '../sections/Contact';
 import Education from '../sections/Education';
@@ -17,12 +16,19 @@ import en from '../i18n/en';
 import es from '../i18n/es';
 
 export default function Home() {
+
+  const { setColorMode } = useColorMode()
+
   const { ref, inView } = useInView({
     threshold: 1,
   });
 
   const router = useRouter();
   const values = router.locale === 'es' ? es : en;
+
+  useEffect(() => {
+    setColorMode("dark")
+  }, [])
 
   return (
     <AppContext.Provider value={values}>
