@@ -1,84 +1,36 @@
-import React, { useContext } from 'react';
 import {
-  chakra,
-  List,
-  Text,
   Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  ListItem,
-  ListIcon,
+  Box
 } from '@chakra-ui/react';
-import { MdCheckCircle } from 'react-icons/md';
-import Container from '../components/Container';
+import React, { useContext } from 'react';
+import CurstomAccordionItem from '../components/CustomAccordion';
 import AppContext from '../context/context';
 
 const Experience = () => {
   const { experience } = useContext(AppContext);
-  const { job_a: jobA, job_b: jobB, title } = experience;
+  const { content } = experience;
   return (
-    <Container title={title} index={4}>
-      <Accordion defaultIndex={[0]} allowMultiple mt="10">
-        <AccordionItem>
-          <AccordionButton>
-            <Text
-              as="h3"
-              flex="1"
-              textAlign="left"
-              fontSize="lg"
-              fontFamily="jet"
-              color="blue.600"
-              fontWeight="700"
-            >
-              Facultad de Ciencias Puras y Naturales{' '}
-              <chakra.span fontSize="xs">Jan/2018 - Dec/2019</chakra.span>
-            </Text>
-            <AccordionIcon />
-          </AccordionButton>
-
-          <AccordionPanel pb={4} textAlign={{ base: 'justify', md: 'left' }}>
-            <List spacing={3}>
-              {jobA.map(job => (
-                <ListItem key={job}>
-                  <ListIcon as={MdCheckCircle} color="green.500" />
-                  {job}
-                </ListItem>
-              ))}
-            </List>
-          </AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <AccordionButton>
-            <Text
-              as="h3"
-              flex="1"
-              textAlign="left"
-              fontSize="lg"
-              fontFamily="jet"
-              color="blue.600"
-              fontWeight="700"
-            >
-              Fam - Bolivia{' '}
-              <chakra.span fontSize="xs">Oct/2018 - Jun/2019</chakra.span>
-            </Text>
-            <AccordionIcon />
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            <List spacing={3}>
-              {jobB.map(job => (
-                <ListItem key={job}>
-                  <ListIcon as={MdCheckCircle} color="green.500" />
-                  {job}
-                </ListItem>
-              ))}
-            </List>
-          </AccordionPanel>
-        </AccordionItem>
+    <Box
+      alignSelf="flex-start"
+      width={{ base: 'full', lg: '50%' }}
+      mt={{ base: '10', lg: '0' }}
+      bg={{ base: 'none', lg: 'linear-gradient(to right, #ffffff00, #0a3455)' }}
+      borderRadius="xl"
+      overflow="hidden"
+    >
+      <Accordion defaultIndex={[0]} allowMultiple styleConfig>
+        {
+          content.map((item, index) => (
+            <CurstomAccordionItem
+              key={+index}
+              experience={item}
+              index={index + 1}
+              size={content.length}
+            />
+          ))
+        }
       </Accordion>
-    </Container>
+    </Box>
   );
 };
 
