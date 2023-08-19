@@ -1,6 +1,6 @@
-import React from 'react';
 import { Box, HStack, Icon, Text, useColorModeValue } from '@chakra-ui/react';
-import { VscCircleOutline } from 'react-icons/vsc';
+import React from 'react';
+import { GoDot } from 'react-icons/go';
 
 const Navigator = ({ children, title }) => (
   <Box
@@ -14,14 +14,14 @@ const Navigator = ({ children, title }) => (
   >
     <HStack
       p="2"
-      bg={useColorModeValue('gray.100', 'gray.600')}
+      bg={useColorModeValue('gray.100', 'gray.700')}
       justify="flex-end"
       position="relative"
     >
       <HStack spacing="1">
-        <Icon as={VscCircleOutline} w="6" h="6" color="red.400" />
-        <Icon as={VscCircleOutline} w="6" h="6" color="yellow.400" />
-        <Icon as={VscCircleOutline} w="6" h="6" color="green.400" />
+        <Icon as={GoDot} w="6" h="6" color="red.400" />
+        <Icon as={GoDot} w="6" h="6" color="yellow.400" />
+        <Icon as={GoDot} w="6" h="6" color="green.400" />
       </HStack>
       <Box position="absolute" fontSize="sm" fontFamily="jet" w="full">
         <Text
