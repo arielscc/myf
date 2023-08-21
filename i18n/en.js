@@ -8,7 +8,7 @@ const categories = [
 const en = {
   header: {
     categories,
-    icons: ['github', 'twitter', 'instagram', 'languages', 'darkmode'],
+    icons: ['github', 'twitter', 'linkedin', 'languages', 'darkmode'],
   },
   hero: {
     greet: 'Hi, my name is',
