@@ -36,7 +36,7 @@ const en = {
         title: 'Mobile Engineer / Full Stack',
         company: 'Enara Health',
         date: 'Aug/2021 - present (2y)',
-        description: `I'm a part of the mobile app development team and have contributed to multiple projects using various languages and technologies. Some of my responsibilities include:`,
+        description: `I'm a member of the mobile app development team and have contributed to several projects using different languages and technologies. Some of my responsibilities include:`,
         country: 'California, USA',
         roles: [
           'Android/iOS App Developer (React Native) - Crafting Cross-Platform Mobile Experiences.',

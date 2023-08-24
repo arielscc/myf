@@ -37,7 +37,7 @@ const es = {
         title: 'Mobile Engineer / Full Stack',
         company: 'Enara Health',
         date: 'Ago/2021 - Actualidad (2 años)',
-        description: 'Actualmente soy parte del equipo de desarrollo de aplicaciones móviles, pero también he contribuido en varios proyectos con diversos lenguajes y tecnologías. Algunas de mis responsabilidades incluyen:',
+        description: 'Actualmente soy miembro del equipo de desarrollo de aplicaciones móviles, pero también he contribuido en varios proyectos con diversos lenguajes y tecnologías. Algunas de mis responsabilidades incluyen:',
         country: 'California, USA',
         roles: [
           'Desarrollador de aplicaciones móviles multiplataforma para Android/iOS (React Native).',
