@@ -1,6 +1,8 @@
 import {
   Accordion,
-  Box
+  Box,
+  Heading,
+  chakra
 } from '@chakra-ui/react';
 import React, { useContext } from 'react';
 import CurstomAccordionItem from '../components/CustomAccordion';
@@ -8,7 +10,7 @@ import AppContext from '../context/context';
 
 const Experience = () => {
   const { experience } = useContext(AppContext);
-  const { content } = experience;
+  const { content, title } = experience;
   return (
     <Box
       alignSelf="flex-start"
@@ -18,6 +20,22 @@ const Experience = () => {
       borderRadius="xl"
       overflow="hidden"
     >
+      <Heading
+        fontFamily="jet"
+        textTransform="capitalize"
+        fontSize={{ base: 'xl', md: '2xl' }}
+        px={4}
+        py={3}
+      >
+        <chakra.span
+          color="tomato"
+          fontSize={{ base: 'sm', md: 'lg' }}
+          fontWeight="900"
+        >
+          01.{' '}
+        </chakra.span>
+        {title}
+      </Heading>
       <Accordion defaultIndex={[0]} allowMultiple styleConfig>
         {
           content.map((item, index) => (

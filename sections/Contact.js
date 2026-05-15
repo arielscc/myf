@@ -8,7 +8,7 @@ const Contact = () => {
   const { contact } = useContext(AppContext);
   const { button, desc, title } = contact;
   return (
-    <Container title={title} index={4}>
+    <Container title={title} index={5}>
       <Box mt="5" textAlign="center">
         <Text maxW="2xl" mx="auto" my="4">
           {desc}

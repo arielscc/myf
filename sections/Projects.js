@@ -13,7 +13,7 @@ const Projects = () => {
   const { title, projects, type } = listProjects;
   const secondaryProjects = projectsData[locale] || projectsData.es;
   return (
-    <Container title={title} index={3}>
+    <Container title={title} index={4}>
       {projects.map((project, i) => (
         <Box key={project.id}>
           <Project data={project} index={i} type={type} />

@@ -29,7 +29,7 @@ const Skills = () => {
   }));
 
   return (
-    <Container title={title} index={1}>
+    <Container title={title} index={2}>
       <Tabs
         w="full"
         bg={useColorModeValue('white', 'inherit')}

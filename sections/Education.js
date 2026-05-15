@@ -41,7 +41,7 @@ const Education = () => {
     show_less: showLess,
   } = education;
   return (
-    <Container title={title} index={2}>
+    <Container title={title} index={3}>
       <Flex
         gridGap={{ base: '5', lg: '10' }}
         direction={{ base: 'column', lg: 'row' }}
