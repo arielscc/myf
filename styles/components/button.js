@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { darken, mode, whiten } from '@chakra-ui/theme-tools';
 
 const Button = {

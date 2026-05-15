@@ -15,7 +15,8 @@ import {
   DiHtml5,
   DiPhotoshop,
   DiReact,
-  DiTerminal
+  DiTerminal,
+  DiVisualstudio,
 } from 'react-icons/di';
 import { FaCode, FaPaintBrush, FaTools } from 'react-icons/fa';
 import { RiReactjsLine } from 'react-icons/ri';
@@ -44,7 +45,6 @@ import {
   SiSourcetree,
   SiTailwindcss,
   SiTypescript,
-  SiVisualstudio
 } from 'react-icons/si';
 import { TbSql } from 'react-icons/tb';
 import Container from '../components/Container';
@@ -85,7 +85,7 @@ const data = {
     { title: 'docker', Icon: SiDocker },
     { title: 'terminal', Icon: DiTerminal },
     { title: 'aws', Icon: BiLogoAws },
-    { title: 'vscode', Icon: SiVisualstudio },
+    { title: 'vscode', Icon: DiVisualstudio },
     { title: 'github', Icon: SiGithub },
     { title: 'bitbucket', Icon: SiBitbucket },
     { title: 'reactotron', Icon: RiReactjsLine },

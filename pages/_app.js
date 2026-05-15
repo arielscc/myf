@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-
 import '@fontsource/euphoria-script/400.css';
 import '@fontsource/jetbrains-mono/600.css';
 import '@fontsource/montserrat/400.css';

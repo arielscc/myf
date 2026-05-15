@@ -60,7 +60,7 @@ const Header = ({ inview }) => {
       borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
       <Link href="/">
-        <Image src={Logo} width={20} height={20} />
+        <Image src={Logo} width={20} height={20} alt="Ariel Chura" />
       </Link>
       <chakra.div
         maxW={{ base: 'full', lg: '3xl', xl: '5xl' }}

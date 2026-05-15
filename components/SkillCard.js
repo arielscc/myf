@@ -2,9 +2,10 @@ import { GridItem, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
 
+const MotionGridItem = motion(GridItem);
+
 const SkillCard = ({ item }) => {
   const { title, Icon: Icono } = item;
-  const MotionGridItem = motion(GridItem);
   return (
     <MotionGridItem
       key={title}
@@ -24,7 +25,7 @@ const SkillCard = ({ item }) => {
         fontSize={['xs', 'xs', 'sm', 'inherit']}
         mt={['2', '4']}
         textTransform="capitalize"
-        userSelect='none'
+        userSelect="none"
       >
         {title}
       </Text>
