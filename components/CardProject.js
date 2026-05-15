@@ -10,11 +10,13 @@ import {
   Spacer,
   VStack,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
+import AppContext from '../context/context';
 import CardDescription from './CardDescription';
 
 const CardProject = ({ card }) => {
+  const { list_projects: listProjects } = useContext(AppContext);
   const {
     title,
     desc,
@@ -31,7 +33,7 @@ const CardProject = ({ card }) => {
       shadow="lg"
     >
       <HStack w="full" justify="space-between">
-        <Heading fontSize={{ base: 'xl', md: '2xl' }} maxW="2xs">
+        <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} maxW="2xs">
           {title}
         </Heading>
         <HStack spacing="1">
@@ -46,7 +48,7 @@ const CardProject = ({ card }) => {
             rounded="lg"
             icon={<VscGithubAlt size="20" />}
             role="link"
-            aria-label="link to github"
+            aria-label={`Open ${title} source code on GitHub`}
           />
           {card.links.live && (
             <IconButton
@@ -60,12 +62,12 @@ const CardProject = ({ card }) => {
               rounded="lg"
               icon={<VscLinkExternal size="20" />}
               role="link"
-              aria-label="link to live project"
+              aria-label={`Open ${title} live project`}
             />
           )}
         </HStack>
       </HStack>
-      <CardDescription desc={desc} />
+      <CardDescription desc={desc} showMoreLabel={listProjects.show_more} />
       <Spacer />
       <Flex gridGap="2" wrap="wrap" w="full">
         {tags.map(tag => (

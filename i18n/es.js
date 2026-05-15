@@ -80,6 +80,7 @@ const es = {
   list_projects: {
     title: 'proyectos',
     type: 'proyecto destacado',
+    show_more: 'Ver más',
     projects: [
       {
         id: 1,

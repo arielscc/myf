@@ -58,10 +58,11 @@ const Header = ({ inview }) => {
       border="1px"
       borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
-      <Link href="/">
+      <Link href="/" aria-label="Ariel Chura - home">
         <Image src={Logo} width={20} height={20} alt="Ariel Chura" />
       </Link>
       <chakra.div
+        id="site-navigation"
         maxW={{ base: 'full', lg: '3xl', xl: '5xl' }}
         display={{ base: isOpen ? 'flex' : 'none', lg: 'flex' }}
         flexDirection={{ base: 'column', lg: 'row' }}
@@ -113,7 +114,7 @@ const Header = ({ inview }) => {
               icon={<FaGithub />}
               variant="primary"
               size="sm"
-              aria-label="link to github"
+              aria-label="Open Ariel Chura GitHub profile"
               rel="noopener"
             />
           </Tooltip>
@@ -127,7 +128,7 @@ const Header = ({ inview }) => {
               icon={<FaTwitter />}
               variant="primary"
               size="sm"
-              aria-label="link to twitter"
+              aria-label="Open Ariel Chura Twitter profile"
               rel="noopener"
             />
           </Tooltip>
@@ -141,7 +142,7 @@ const Header = ({ inview }) => {
               icon={<FaLinkedin />}
               variant="primary"
               size="sm"
-              aria-label="link to instagram"
+              aria-label="Open Ariel Chura LinkedIn profile"
               rel="noopener"
             />
           </Tooltip>
@@ -154,7 +155,7 @@ const Header = ({ inview }) => {
             rounded="md"
             as={IconButton}
             icon={<HiTranslate />}
-            aria-label="select language"
+            aria-label={language}
           />
           <MenuList>
             <MenuOptionGroup
@@ -182,7 +183,9 @@ const Header = ({ inview }) => {
           icon={<Icon as={isOpen ? HiX : HiMenu} h="5" w="5" />}
           onClick={onToggle}
           display={{ base: 'inline-flex', lg: 'none' }}
-          aria-label="toggle menu"
+          aria-controls="site-navigation"
+          aria-expanded={isOpen}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
         />
       </ButtonGroup>
     </Flex>

@@ -52,7 +52,7 @@ const Education = () => {
           display={{ base: 'block' }}
           w={{ base: 'full', lg: '40%' }}
         >
-          <Heading fontSize={{ base: 'xl', md: 'xl' }} fontWeight="500" color="white.700" pb={10}>
+          <Heading as="h3" fontSize={{ base: 'xl', md: 'xl' }} fontWeight="500" pb={10}>
             {descU}
           </Heading>
           <Text textAlign={{ base: 'justify', md: 'left' }}>
@@ -77,6 +77,7 @@ const Education = () => {
                 color="#2C73D2"
                 w={{ base: '4', md: '6' }}
                 h={{ base: '4', md: '6' }}
+                aria-hidden
               />
               <Text fontSize={['xs', 'xs', 'md']} ml={{ base: '1', sm: '2' }}>
                 {tabs[0]}
@@ -88,6 +89,7 @@ const Education = () => {
                 color="#98CA3F"
                 w={{ base: '4', md: '6' }}
                 h={{ base: '4', md: '6' }}
+                aria-hidden
               />
               <Text fontSize={['xs', 'xs', 'md']} ml={{ base: '1', sm: '2' }}>
                 {tabs[1]}
@@ -113,7 +115,7 @@ const Education = () => {
                 <List spacing={3} textAlign="left">
                   {certifications.univ.map(item => (
                     <ListItem key={item.id} boxSizing="border-box" href="#">
-                      <ListIcon as={MdCheckCircle} color="green.500" />
+                      <ListIcon as={MdCheckCircle} color="green.500" aria-hidden />
                       <CertModal item={item} />
                     </ListItem>
                   ))}
@@ -125,7 +127,7 @@ const Education = () => {
                 <List spacing={3} textAlign="left">
                   {certifications.platzi.map(({ id, title: titleCert, url }) => (
                     <ListItem key={id}>
-                      <ListIcon as={MdCheckCircle} color="green.500" />
+                      <ListIcon as={MdCheckCircle} color="green.500" aria-hidden />
                       <Link href={url} target="_blank" rel="noopener">
                         {titleCert}
                       </Link>

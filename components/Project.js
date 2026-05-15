@@ -55,7 +55,7 @@ const Project = ({ data, index, type }) => {
           >
             {type}
           </chakra.span>
-          <Heading fontSize={{ base: 'xl', md: '2xl' }} maxW="2xs">
+          <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} maxW="2xs">
             {title}
           </Heading>
         </Box>
@@ -105,7 +105,7 @@ const Project = ({ data, index, type }) => {
               rounded="lg"
               icon={<VscGithubAlt size="20" />}
               role="link"
-              aria-label="link to github"
+              aria-label={`Open ${title} source code on GitHub`}
             />
             <IconButton
               as={Link}
@@ -118,7 +118,7 @@ const Project = ({ data, index, type }) => {
               rounded="lg"
               icon={<VscLinkExternal size="20" />}
               role="link"
-              aria-label="link to live project"
+              aria-label={`Open ${title} live project`}
             />
           </HStack>
         </Box>
@@ -126,7 +126,7 @@ const Project = ({ data, index, type }) => {
       <Navigator title={title} position={position}>
         <Image
           src={url}
-          alt={`imagen ${title}`}
+          alt={`${title} project screenshot`}
           width={1280}
           height={720}
           style={{ width: '100%', height: 'auto' }}

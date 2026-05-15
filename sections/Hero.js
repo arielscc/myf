@@ -62,6 +62,7 @@ const Hero = ({ referencie }) => {
             w={{ base: 'full', md: 'xs' }}
             mt="10"
             role="button"
+            aria-label={button}
           >
             {button}
           </Button>

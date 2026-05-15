@@ -82,6 +82,7 @@ const en = {
   list_projects: {
     title: 'projects',
     type: 'featured project',
+    show_more: 'Show More',
     projects: [
       {
         id: 1,

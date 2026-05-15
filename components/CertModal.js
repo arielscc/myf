@@ -1,4 +1,5 @@
 import {
+  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -6,7 +7,6 @@ import {
   ModalOverlay,
   useDisclosure,
   ModalContent,
-  Link,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
@@ -16,9 +16,17 @@ const CertModal = ({ item }) => {
   const { onOpen, onClose, isOpen } = useDisclosure();
   return (
     <>
-      <Link onClick={onOpen} textAlign="left" fontWeight="normal">
+      <Button
+        variant="link"
+        onClick={onOpen}
+        textAlign="left"
+        fontWeight="normal"
+        height="auto"
+        whiteSpace="normal"
+        aria-label={`Open certificate: ${title}`}
+      >
         {title}
-      </Link>
+      </Button>
       <Modal
         isOpen={isOpen}
         onClose={onClose}
@@ -28,7 +36,7 @@ const CertModal = ({ item }) => {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{title}</ModalHeader>
+          <ModalHeader as="h2">{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody h="300px" p="10">
             <Image

@@ -1,7 +1,7 @@
 import { Button, Collapse, Text } from '@chakra-ui/react';
 import React, { useEffect, useRef, useState } from 'react';
 
-const CardDescription = ({ desc }) => {
+const CardDescription = ({ desc, showMoreLabel }) => {
   const [show, setShow] = useState(true);
   const ref = useRef();
   useEffect(() => {
@@ -24,7 +24,7 @@ const CardDescription = ({ desc }) => {
           onClick={handleToggle}
           mt="1rem"
         >
-          Ver más
+          {showMoreLabel}
         </Button>
       )}
     </>
