@@ -1,19 +1,18 @@
-import React from 'react';
-import Image from 'next/image';
 import {
-  HStack,
-  VStack,
   Box,
   chakra,
-  Text,
-  Tag,
-  IconButton,
-  Heading,
-  useColorModeValue,
-  Link,
   Flex,
+  Heading,
+  HStack,
+  IconButton,
+  Link,
+  Tag,
   TagLabel,
+  Text,
+  useColorModeValue,
+  VStack,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import Navigator from './Navigator';
 
@@ -128,10 +127,9 @@ const Project = ({ data, index, type }) => {
         <Image
           src={url}
           alt={`imagen ${title}`}
-          width="100%"
-          height="50px"
-          layout="responsive"
-          objectFit="fill"
+          width={1280}
+          height={720}
+          style={{ width: '100%', height: 'auto' }}
         />
       </Navigator>
     </Flex>

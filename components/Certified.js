@@ -16,7 +16,13 @@ const Certified = ({ item }) => {
       <Text as="h4" fontSize={{ base: 'xs', sm: 'sm' }} textAlign="left" p="2">
         {title}
       </Text>
-      <Image src={image} alt={title} layout="responsive" />
+      <Image
+        src={image}
+        alt={title}
+        width={1280}
+        height={720}
+        style={{ width: '100%', height: 'auto' }}
+      />
     </GridItem>
   );
 };

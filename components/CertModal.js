@@ -33,10 +33,10 @@ const CertModal = ({ item }) => {
           <ModalBody h="300px" p="10">
             <Image
               src={url}
-              width="100%"
-              height="56%"
-              layout="responsive"
-              objectFit="contain"
+              alt={title}
+              width={1280}
+              height={720}
+              style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
               quality={100}
             />
           </ModalBody>

@@ -18,7 +18,13 @@ const About = () => {
         gridGap="5"
       >
         <Box w="xs" rounded="3xl" overflow="hidden" shadow="2xl">
-          <Image src={profile} alt="profilees" layout="responsive" />
+          <Image
+            src={profile}
+            alt="profile"
+            width={320}
+            height={320}
+            style={{ width: '100%', height: 'auto' }}
+          />
         </Box>
         <Text textAlign="justify" w={{ base: 'full', lg: 'lg' }}>
           {description}
