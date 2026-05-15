@@ -11,6 +11,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "pnpm test:e2e",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install chromium",
     "format": "prettier --write '{*.js,{pages,components,sections}/**/*.{js}}'",
     "prepare-hooks": "husky install"
   },
@@ -33,6 +36,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
+    "@playwright/test": "^1.60.0",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.2.6",
     "eslint-config-prettier": "^10.1.8",

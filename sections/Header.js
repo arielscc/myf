@@ -4,6 +4,7 @@ import {
   HStack,
   Icon,
   IconButton,
+  Image,
   Link,
   Menu,
   MenuButton,
@@ -15,7 +16,6 @@ import {
   useColorModeValue,
   useDisclosure
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
 import {
@@ -59,7 +59,11 @@ const Header = ({ inview }) => {
       borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
       <Link href="/" aria-label="Ariel Chura - home">
-        <Image src={Logo} width={20} height={20} alt="Ariel Chura" />
+        <Image
+          src={Logo.src}
+          boxSize="20px"
+          alt="Ariel Chura"
+        />
       </Link>
       <chakra.div
         id="site-navigation"

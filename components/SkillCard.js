@@ -2,7 +2,7 @@ import { GridItem, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
 
-const MotionGridItem = motion(GridItem);
+const MotionGridItem = motion.create(GridItem);
 
 const SkillCard = ({ item }) => {
   const { title, Icon: Icono } = item;
