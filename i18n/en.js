@@ -9,8 +9,10 @@ const en = {
   header: {
     categories,
     icons: ['github', 'twitter', 'linkedin', 'languages', 'darkmode'],
+    language: 'Language',
   },
   hero: {
+    title: 'home',
     greet: 'Hi, my name is',
     prof: 'Software Engineer',
     button: 'download resume',
@@ -23,6 +25,9 @@ const en = {
     desc_u3: "La Paz - Bolivia, 2020",
     desc_c:
       'During my education, I earned certifications from the university and online learning platforms.',
+    tabs: ['University', 'Platzi'],
+    show_more: 'Show More',
+    show_less: 'Show Less',
   },
   skills: {
     title: 'skills',
@@ -119,6 +124,7 @@ const en = {
   contact: {
     title: 'contact',
     desc: 'Hello again, If you want to build incredible things or want to contact me with any suggestions or questions you can send me an email, or an internal message on my social networks.',
+    button: 'Message',
   },
   footer: {
     desc: 'Designed & Built by Ariel Chura',

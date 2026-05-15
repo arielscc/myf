@@ -16,14 +16,13 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
 import {
   FaGithub,
   FaLinkedin,
   FaTwitter
 } from 'react-icons/fa';
-
-import { useRouter } from 'next/dist/client/router';
 import { HiMenu, HiTranslate, HiX } from 'react-icons/hi';
 import AppContext from '../context/context';
 import Logo from '../public/assets/logo.svg';
@@ -32,7 +31,7 @@ const Header = ({ inview }) => {
   const { isOpen, onToggle } = useDisclosure();
   const padding = inview ? '4' : '2';
   const { header } = useContext(AppContext);
-  const { categories } = header;
+  const { categories, language } = header;
 
   const router = useRouter();
   const handleChangeLanguage = value => {
@@ -160,7 +159,7 @@ const Header = ({ inview }) => {
           <MenuList>
             <MenuOptionGroup
               defaultValue={router.locale}
-              title="Language"
+              title={language}
               type="radio"
             >
               <MenuItemOption

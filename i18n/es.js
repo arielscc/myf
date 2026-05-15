@@ -8,6 +8,7 @@ const es = {
       'contacto',
     ],
     icons: ['github', 'twitter', 'linkedin', 'idiomas', 'darkmode'],
+    language: 'Idioma',
   },
   hero: {
     title: 'inicio',
@@ -24,11 +25,14 @@ const es = {
     desc_u3: "La Paz - Bolivia, 2020",
     desc_c:
       'Durante mi formación, logré certificaciones dentro de la universidad y en plataformas en línea.',
+    tabs: ['Universidad', 'Platzi'],
+    show_more: 'Ver más',
+    show_less: 'Ver menos',
   },
   skills: {
     title: 'habilidades',
     desc: 'En mis tiempos libres pude capacitarme en diferentes tecnologías, algunas de ellas son.',
-    tabs: ['lenguajes', 'librerias', 'herramientas', 'diseño'],
+    tabs: ['lenguajes', 'librerías', 'herramientas', 'diseño'],
   },
   experience: {
     title: 'experiencia',
@@ -118,6 +122,7 @@ const es = {
   contact: {
     title: 'contacto',
     desc: 'Hola de nuevo, Si quieres construir cosas increíbles, o quieres contactarte conmigo por alguna sugerencia o pregunta, puedes enviarme un correo, o un mensaje interno en mis redes sociales.',
+    button: 'Mensaje',
   },
   footer: {
     desc: 'Diseñado & Desarrollado por Ariel Chura',

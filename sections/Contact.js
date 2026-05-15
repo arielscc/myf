@@ -6,7 +6,7 @@ import AppContext from '../context/context';
 
 const Contact = () => {
   const { contact } = useContext(AppContext);
-  const { desc, title } = contact;
+  const { button, desc, title } = contact;
   return (
     <Container title={title} index={4}>
       <Box mt="5" textAlign="center">
@@ -24,7 +24,7 @@ const Contact = () => {
             textDecoration: 'none',
           }}
         >
-          Mensaje
+          {button}
         </Button>
       </Box>
     </Container>

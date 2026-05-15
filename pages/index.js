@@ -1,6 +1,6 @@
 import { Box, useColorModeValue } from '@chakra-ui/react';
-import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import AppContext from '../context/context';

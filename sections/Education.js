@@ -30,7 +30,16 @@ const Education = () => {
   const handleToggle = () => setShow(!show);
 
   const { education } = useContext(AppContext);
-  const { title, desc_u: descU, desc_u2: descU2, desc_u3: descU3, desc_c: descC } = education;
+  const {
+    title,
+    desc_u: descU,
+    desc_u2: descU2,
+    desc_u3: descU3,
+    desc_c: descC,
+    tabs,
+    show_more: showMore,
+    show_less: showLess,
+  } = education;
   return (
     <Container title={title} index={2}>
       <Flex
@@ -70,7 +79,7 @@ const Education = () => {
                 h={{ base: '4', md: '6' }}
               />
               <Text fontSize={['xs', 'xs', 'md']} ml={{ base: '1', sm: '2' }}>
-                Universidad
+                {tabs[0]}
               </Text>
             </Tab>
             <Tab>
@@ -81,7 +90,7 @@ const Education = () => {
                 h={{ base: '4', md: '6' }}
               />
               <Text fontSize={['xs', 'xs', 'md']} ml={{ base: '1', sm: '2' }}>
-                Platzi
+                {tabs[1]}
               </Text>
             </Tab>
             {/**
@@ -136,7 +145,7 @@ const Education = () => {
                 textDecoration: 'none',
               }}
             >
-              Show {show ? 'Less' : 'More'}
+              {show ? showLess : showMore}
             </Button>
           </TabPanels>
         </Tabs>
