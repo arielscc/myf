@@ -41,9 +41,9 @@ const es = {
         country: 'California, USA',
         roles: [
           'Desarrollador de aplicaciones móviles multiplataforma para Android/iOS (React Native).',
-          'Desarrollador de aplicaciones web (React) - implementación defunciones y mantenimiento de interfaces de usuario.',
+          'Desarrollador de aplicaciones web (React) - implementación de funciones y mantenimiento de interfaces de usuario.',
           'Desarrollador de Microservicios (Node.js) - Arquitectura Escalable.',
-          'Desarrollador en proyectos Ruby on Rails - Adición defunciones específicas.',
+          'Desarrollador en proyectos Ruby on Rails - adición de funciones específicas.',
           'Desarrollo de módulos nativos para Android.'
         ],
 
@@ -62,7 +62,7 @@ const es = {
       },
       {
         title: 'Encargado de sistemas',
-        company: 'Federación de Asociaciones Municiapales de Bolivia',
+        company: 'Federación de Asociaciones Municipales de Bolivia',
         date: 'Ene/2017 - Dic/2017 (1 año)',
         country: 'La Paz, BO',
         roles: [

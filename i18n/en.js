@@ -19,18 +19,18 @@ const en = {
   education: {
     title: 'education',
     desc_u: `Bachelor's Degree in Computer Science with a specialization in Computer Systems Engineering`,
-    desc_u2: "Facultad de Ciencias Puras y Naturalés, Universidad Mayor de San Andrés",
+    desc_u2: 'Faculty of Pure and Natural Sciences, Universidad Mayor de San Andrés',
     desc_u3: "La Paz - Bolivia, 2020",
     desc_c:
-      'Durante mi formación, logré certificaciones dentro de la universidad y en plataformas en línea.',
+      'During my education, I earned certifications from the university and online learning platforms.',
   },
   skills: {
     title: 'skills',
-    desc: 'In my free time. I was able to train in different technologies, some of them are.',
+    desc: 'In my free time, I have trained in different technologies, including:',
     tabs: ['languages', 'libraries', 'tools', 'design'],
   },
   experience: {
-    title: 'experiencia',
+    title: 'experience',
     content: [
       {
         title: 'Mobile Engineer / Full Stack',
@@ -55,7 +55,7 @@ const en = {
         date: 'Jan/2018 - Dec/2019 (2y)',
         country: 'La Paz, BO',
         roles: [
-          'User Interface Development -Developing user interfaces using HTML, CSS y JavaScript.',
+          'User Interface Development - developing user interfaces using HTML, CSS, and JavaScript.',
           'Support of the faculty systems.',
           'UI Design and Graphic Design - Creating and proposing interfaces for systems.',
           'Database Management - Generating required reports from databases.'
@@ -111,7 +111,7 @@ const en = {
         },
         url: '/assets/projects/video-anime.jpg',
         description:
-          'This project is a site to watch anime videos, filter them by re-relevance, popularity and rating. This website natively implements Server-Side-Rendering, and is a PWA',
+          'This project is a site to watch anime videos and filter them by relevance, popularity, and rating. This website natively implements Server-Side Rendering and is a PWA',
         tags: ['Javascript', 'Kitsu.io', 'Css', 'Html'],
       },
     ],

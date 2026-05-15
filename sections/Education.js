@@ -33,13 +33,13 @@ const certs = {
     },
     {
       id: 2,
-      title: 'ChatBoot',
+      title: 'Chatbot',
       url: '/assets/uni/chat_boot.jpg',
     },
     {
       id: 3,
       title:
-        'Diseño centrado en el humano, la transformación digital no empieza con una linea de código',
+        'Diseño centrado en el humano, la transformación digital no empieza con una línea de código',
       url: '/assets/uni/diseño_centrado_en_el_humano.jpg',
     },
     {
@@ -49,7 +49,7 @@ const certs = {
     },
     {
       id: 5,
-      title: 'Los nuevos desafios para la informática forense',
+      title: 'Los nuevos desafíos para la informática forense',
       url: '/assets/uni/los_nuevos_desafios_para_la_inf_forense.jpg',
     },
     {
@@ -65,17 +65,17 @@ const certs = {
     },
     {
       id: 8,
-      title: 'Curso Programción con oracle 12c',
+      title: 'Curso Programación con Oracle 12c',
       url: '/assets/uni/programacion_con_oracle_12c.jpg',
     },
     {
       id: 9,
-      title: 'Curso introduccion a base de datos SQL',
+      title: 'Curso Introducción a bases de datos SQL',
       url: '/assets/uni/introduccion_bd_sql.jpg',
     },
     {
       id: 10,
-      title: 'Taller de creacion de aplicaciones con PHP - Laravel',
+      title: 'Taller de creación de aplicaciones con PHP - Laravel',
       url: '/assets/uni/taller_creacion_de_aplicaciones_laravel.jpg',
     },
     {
@@ -95,7 +95,7 @@ const certs = {
     },
     {
       id: 14,
-      title: 'Seminario Programacion oritenda a objetos en Java',
+      title: 'Seminario Programación orientada a objetos en Java',
       url: '/assets/uni/poo_en_java.jpg',
     },
     {
@@ -106,19 +106,19 @@ const certs = {
     {
       id: 16,
       title:
-        'Memorandum: Tribunal paritario docente - estudiantil para examenes de competencia',
+        'Memorándum: Tribunal paritario docente - estudiantil para exámenes de competencia',
       url: '/assets/uni/memorandum_des_tribunal_proyectos_de_inv.jpg',
     },
     {
       id: 17,
       title:
-        'Memorandum: Designación auxiliar de servicio diseño y administracion de base de datos 2019',
+        'Memorándum: Designación auxiliar de servicio diseño y administración de base de datos 2019',
       url: '/assets/uni/memorandum_des_aux_servicio_titular_2019.jpg',
     },
     {
       id: 18,
       title:
-        'Memorandum: Designación auxiliar de servicio diseño y administracion de base de datos 2018',
+        'Memorándum: Designación auxiliar de servicio diseño y administración de base de datos 2018',
       url: '/assets/uni/memorandum_des_aux_servicio_titular_2018.jpg',
     },
     {
@@ -252,7 +252,7 @@ const certs = {
     {
       id: 241,
       title: 'Curso Profesional de JavaScript',
-      url: 'hhttps://platzi.com/p/ArielScc/curso/1642-javascript-profesional/diploma/detalle/',
+      url: 'https://platzi.com/p/ArielScc/curso/1642-javascript-profesional/diploma/detalle/',
     },
     {
       id: 251,
