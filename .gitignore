@@ -4,9 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
-.husky
 .pnpm-data
 .pnpm-store
+
+# Husky generated files
+.husky/_
 
 # testing
 /coverage
