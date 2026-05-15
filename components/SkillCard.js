@@ -1,6 +1,5 @@
 import { GridItem, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import React from 'react';
 
 const MotionGridItem = motion.create(GridItem);
 

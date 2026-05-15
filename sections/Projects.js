@@ -1,6 +1,6 @@
 import { Box, Divider, SimpleGrid } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import CardProject from '../components/CardProject';
 import Container from '../components/Container';
 import Project from '../components/Project';
@@ -21,7 +21,11 @@ const Projects = () => {
         </Box>
       ))}
 
-      <SimpleGrid minChildWidth="250px" gap="5" mt="14">
+      <SimpleGrid
+        minChildWidth={{ base: 'min(100%, 250px)', md: '250px' }}
+        gap={{ base: '4', md: '5' }}
+        mt={{ base: '10', md: '14' }}
+      >
         {secondaryProjects.map(card => (
           <CardProject card={card} key={card.id} />
         ))}

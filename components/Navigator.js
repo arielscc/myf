@@ -11,6 +11,7 @@ const Navigator = ({ children, title }) => (
     border="1px"
     borderColor={useColorModeValue('gray.200', 'gray.500')}
     overflow="hidden"
+    flexShrink={0}
   >
     <HStack
       p="2"
@@ -28,10 +29,11 @@ const Navigator = ({ children, title }) => (
           bg={useColorModeValue('white', 'gray.800')}
           textAlign="center"
           rounded="lg"
-          w="50%"
+          w={{ base: '62%', md: '50%' }}
           mx="auto"
-          py={{ base: '-0.5', md: '1' }}
+          py={{ base: '0.5', md: '1' }}
           fontSize={{ base: 'xs', md: 'inherit' }}
+          noOfLines={1}
         >
           {title}
         </Text>

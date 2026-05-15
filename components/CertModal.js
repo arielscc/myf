@@ -32,19 +32,30 @@ const CertModal = ({ item }) => {
         onClose={onClose}
         motionPreset="slideInBottom"
         isCentered
-        size="6xl"
+        size={{ base: 'full', md: '5xl', xl: '6xl' }}
+        scrollBehavior="inside"
       >
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader as="h2">{title}</ModalHeader>
+        <ModalContent
+          mx={{ base: '0', md: '4' }}
+          maxH={{ base: '100dvh', md: '90dvh' }}
+        >
+          <ModalHeader as="h2" pr="12" fontSize={{ base: 'md', md: 'xl' }}>
+            {title}
+          </ModalHeader>
           <ModalCloseButton />
-          <ModalBody h="300px" p="10">
+          <ModalBody p={{ base: '3', md: '8' }}>
             <Image
               src={url}
               alt={title}
               width={1280}
               height={720}
-              style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+              style={{
+                width: '100%',
+                maxHeight: 'calc(90dvh - 120px)',
+                height: 'auto',
+                objectFit: 'contain',
+              }}
               quality={100}
             />
           </ModalBody>

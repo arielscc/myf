@@ -33,20 +33,27 @@ const Project = ({ data, index, type }) => {
         base: 'column-reverse',
         md: position === 'left' ? 'row' : 'row-reverse',
       }}
-      my="5"
+      my={{ base: '10', md: '5' }}
       alignItems="center"
       h={{ base: 'inherit', md: 'md' }}
+      gap={{ base: '5', md: '0' }}
     >
       <VStack
         w={{ base: 'full', md: 'lg' }}
-        spacing="5"
-        alignItems={position === 'left' ? 'flex-start' : 'flex-end'}
-        textAlign={position === 'left' ? 'left' : 'right'}
+        spacing={{ base: '4', md: '5' }}
+        alignItems={{
+          base: 'flex-start',
+          md: position === 'left' ? 'flex-start' : 'flex-end',
+        }}
+        textAlign={{
+          base: 'left',
+          md: position === 'left' ? 'left' : 'right',
+        }}
         mr={position === 'left' ? { base: 'inherit', md: '-32' } : 'inherit'}
         ml={position === 'right' ? { base: 'inherit', md: '-32' } : 'inherit'}
         zIndex="docked"
       >
-        <Box p="4">
+        <Box p={{ base: '0', md: '4' }} w="full">
           <chakra.span
             fontSize={{ base: 'xs', md: 'sm' }}
             fontFamily="jet"
@@ -67,7 +74,12 @@ const Project = ({ data, index, type }) => {
           border="1px"
           borderColor={useColorModeValue('gray.200', 'gray.600')}
         >
-          <Text textAlign={position === 'left' ? 'left' : 'right'}>
+          <Text
+            textAlign={{
+              base: 'left',
+              md: position === 'left' ? 'left' : 'right',
+            }}
+          >
             {description}
           </Text>
         </Box>

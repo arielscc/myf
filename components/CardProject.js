@@ -3,14 +3,14 @@ import {
   Heading,
   HStack,
   IconButton,
+  Link,
+  Spacer,
   Tag,
   TagLabel,
-  Link,
   useColorModeValue,
-  Spacer,
   VStack,
 } from '@chakra-ui/react';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { VscGithubAlt, VscLinkExternal } from 'react-icons/vsc';
 import AppContext from '../context/context';
 import CardDescription from './CardDescription';
@@ -31,12 +31,19 @@ const CardProject = ({ card }) => {
       p="4"
       rounded="md"
       shadow="lg"
+      align="stretch"
+      minH={{ base: 'auto', md: 'xs' }}
     >
-      <HStack w="full" justify="space-between">
-        <Heading as="h3" fontSize={{ base: 'xl', md: '2xl' }} maxW="2xs">
+      <HStack w="full" justify="space-between" align="flex-start" spacing="3">
+        <Heading
+          as="h3"
+          fontSize={{ base: 'xl', md: '2xl' }}
+          maxW="2xs"
+          noOfLines={2}
+        >
           {title}
         </Heading>
-        <HStack spacing="1">
+        <HStack spacing="1" flexShrink={0}>
           <IconButton
             as={Link}
             href={github}
@@ -69,7 +76,7 @@ const CardProject = ({ card }) => {
       </HStack>
       <CardDescription desc={desc} showMoreLabel={listProjects.show_more} />
       <Spacer />
-      <Flex gridGap="2" wrap="wrap" w="full">
+      <Flex gap="2" wrap="wrap" w="full">
         {tags.map(tag => (
           <Tag
             key={tag}

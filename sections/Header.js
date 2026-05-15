@@ -1,5 +1,6 @@
 import {
   ButtonGroup,
+  Box,
   Flex,
   HStack,
   Icon,
@@ -14,15 +15,11 @@ import {
   Tooltip,
   chakra,
   useColorModeValue,
-  useDisclosure
+  useDisclosure,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter
-} from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiMenu, HiTranslate, HiX } from 'react-icons/hi';
 import AppContext from '../context/context';
 import Logo from '../public/assets/logo.svg';
@@ -43,7 +40,10 @@ const Header = ({ inview }) => {
   return (
     <Flex
       as="nav"
-      bg={useColorModeValue('white', 'linear-gradient(to right, #080617, #002c4e, #171725)')}
+      bg={useColorModeValue(
+        'white',
+        'linear-gradient(to right, #080617, #002c4e, #171725)'
+      )}
       justify="space-between"
       alignItems="center"
       shadow="md"
@@ -59,11 +59,7 @@ const Header = ({ inview }) => {
       borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
       <Link href="/" aria-label="Ariel Chura - home">
-        <Image
-          src={Logo.src}
-          boxSize="20px"
-          alt="Ariel Chura"
-        />
+        <Image src={Logo.src} boxSize="20px" alt="Ariel Chura" />
       </Link>
       <chakra.div
         id="site-navigation"
@@ -79,13 +75,25 @@ const Header = ({ inview }) => {
         right="0"
         zIndex="base"
         mx="auto"
-        gridGap="12"
+        gap={{ base: '10', lg: '12' }}
         bg={{
-          base: useColorModeValue('rgba(255, 255, 255, .8)', 'rgba(0, 0, 0, .3)'),
-          lg: 'none',
+          base: useColorModeValue(
+            'rgba(255, 255, 255, .96)',
+            'rgba(8, 6, 23, .96)'
+          ),
+          lg: 'transparent',
         }}
-        backdropFilter={{ base: 'blur(5px)', lg: 'none' }}
+        backdropFilter={{ base: 'blur(14px)', lg: 'none' }}
+        px={{ base: '6', lg: '0' }}
       >
+        <Box
+          display={{ base: 'block', lg: 'none' }}
+          position="absolute"
+          top="5"
+          left="5"
+        >
+          <Image src={Logo.src} boxSize="26px" alt="Ariel Chura" />
+        </Box>
         <chakra.div
           display="flex"
           fontFamily="jet"
@@ -93,21 +101,24 @@ const Header = ({ inview }) => {
           alignItems="center"
           justifyContent={{ base: 'center', lg: 'flex-start' }}
           w="full"
-          gridGap={{ lg: '2', xl: '4' }}
+          gap={{ base: '5', lg: '2', xl: '4' }}
         >
           {categories.map(category => (
             <Link
               href={`#${category}`}
               textTransform="capitalize"
-              variant='primary'
+              variant="primary"
+              fontSize={{ base: 'xl', lg: 'sm', xl: 'md' }}
               key={category}
-              onClick={onToggle}
+              onClick={() => {
+                if (isOpen) onToggle();
+              }}
             >
               {category}
             </Link>
           ))}
         </chakra.div>
-        <HStack justify="flex-start">
+        <HStack justify="center" spacing="3">
           <Tooltip hasArrow label="Github">
             <IconButton
               as={Link}
