@@ -2,7 +2,6 @@ const categories = [
   'home',
   'skills',
   'education',
-  'projects',
   'contact',
 ];
 const en = {
@@ -14,9 +13,9 @@ const en = {
   hero: {
     title: 'home',
     greet: 'Hi, my name is',
-    prof: 'Software Engineer',
+    prof: 'Mobile & Full Stack Engineer',
     button: 'download resume',
-    description: 'Engineer with over three years of experience in digital product development, specialized in JavaScript, TypeScript, and NodeJS, and focused on delivering high-quality solutions in terms of performance, accessibility, and best practices.',
+    description: 'Software developer with over 7 years of experience, specialized in cross-platform mobile apps for iOS and Android with React Native, complemented by frontend (React, Next.js, TypeScript) and backend (Node.js, Ruby on Rails). Proven track record in digital health: platforms built from scratch and published on the App Store and Google Play.',
   },
   education: {
     title: 'education',
@@ -31,96 +30,55 @@ const en = {
   },
   skills: {
     title: 'skills',
-    desc: 'In my free time, I have trained in different technologies, including:',
+    desc: 'Technologies I work with daily to build mobile and web products end to end:',
     tabs: ['languages', 'libraries', 'tools', 'design'],
   },
   experience: {
     title: 'experience',
     content: [
       {
-        title: 'Mobile Engineer / Full Stack',
-        company: 'Enara Health',
-        date: 'Aug/2021 - present (2y)',
-        description: `I'm a member of the mobile app development team and have contributed to several projects using different languages and technologies. Some of my responsibilities include:`,
-        country: 'California, USA',
+        title: 'Senior FullStack Software Engineer',
+        company: 'Salud Intercultural',
+        date: 'Oct/2023 - present',
+        description: 'I lead the development of clinical platforms and mobile apps for the healthcare sector, from design to deployment. Some of my responsibilities include:',
+        country: 'La Paz, BO',
         roles: [
-          'Android/iOS App Developer (React Native) - Crafting Cross-Platform Mobile Experiences.',
-          'Web App Developer(React) - Implementing Features and Maintaining Intuitive User Interfaces.',
-          'Microservices Developer (Node.js) - Architecting Scalable.',
-          'Ruby on Rails Contributor - Adding Specific Features.',
-          'Android Native Module Developer - Expanding App Capabilities Through Native Integration.',
-          'Testing (React Native) - Ensuring Robust and Reliable Application Performance.',
-          'Maintained software performance with regular updates.'
+          'Mobile app for iOS and Android with React Native and Firebase, focused on patient follow-up and communication with medical staff.',
+          'End-to-end design and development of SIGECO, a clinical and administrative platform with Next.js, React, TypeScript, PostgreSQL, and Prisma.',
+          'Traceable clinical workflows and role-based access control: referrals, status history, diagnoses, prescriptions, lab orders, and results.',
+          'Transactional system for sales, payments, and inventory with balances, discounts, multiple payment methods, and automatic cash movements.',
+          'Institutional site and CMS with Payload CMS, SEO, analytics, and deployment on Vercel, with unit and integration tests using Vitest.',
         ],
 
       },
       {
-        title: 'Frontend Developer / Tech Support',
-        company: 'Faculty of Pure and Natural Sciences',
-        date: 'Jan/2018 - Dec/2019 (2y)',
-        country: 'La Paz, BO',
+        title: 'Frontend / Mobile Engineer (SemiSenior)',
+        company: 'Enara Health',
+        date: 'Jul/2021 - Aug/2023',
+        description: 'I was part of the team that built a digital health platform for iOS and Android. Some of my responsibilities include:',
+        country: 'California, USA (Remote)',
         roles: [
-          'User Interface Development - developing user interfaces using HTML, CSS, and JavaScript.',
-          'Support of the faculty systems.',
-          'UI Design and Graphic Design - Creating and proposing interfaces for systems.',
-          'Database Management - Generating required reports from databases.'
+          'End-to-end development of a health platform for iOS and Android with React Native: real-time chat, video calls, push notifications, and clinical tracking.',
+          'Mobile frontend architecture and reusable components, optimizing performance and visual consistency across devices and operating systems.',
+          'Native Android modules for device features not available through the standard React Native APIs.',
+          'Services with Node.js and Ruby on Rails for clinical data management, synchronization, and communication with the platform.',
+          'Integration with third-party APIs, health apps, and insurers to enable clinical follow-up and data exchange.',
+          'Automated testing with Jest, Detox, and Maestro, and CI/CD pipelines for continuous delivery to the App Store and Google Play.',
         ],
+
       },
       {
-        title: 'System Manager',
-        company: 'Federation of Municipal Associations of Bolivia',
-        date: 'Jan/2017 - Dec/2017 (1y)',
+        title: 'Software Developer',
+        company: 'TIC Facultativo UMSA / FCPN-TIC',
+        date: '2018 - 2019',
         country: 'La Paz, BO',
         roles: [
-          'Systems Administrator and Tech Resource Management.',
-          'Network Administrator.'
+          'Development of new features and user interfaces for the university institutional products.',
+          'Database management and report generation for various academic units.',
         ],
       },
 
     ]
-  },
-  list_projects: {
-    title: 'projects',
-    type: 'featured project',
-    show_more: 'Show More',
-    projects: [
-      {
-        id: 1,
-        title: 'Exchange BTC',
-        links: {
-          github: 'https://github.com/arielscc/intercambio-btc',
-          live: 'https://intercambio-btc.netlify.app/',
-        },
-        url: '/assets/projects/intercambio-btc.jpg',
-        description:
-          'This project is a Single Page App, developed in Vuejs v2 In order to see the value of cryptocurrencies, search for better exchanges and presents a graph of the current state of each cryptocurrency.',
-        tags: ['VueJs', 'Javascript', 'TailwindCss'],
-      },
-      {
-        id: 2,
-        title: 'Tienda Online',
-        links: {
-          github: 'https://github.com/arielscc/TiendaOnline',
-          live: 'https://tiendaenlinea-6d2f5.firebaseapp.com/',
-        },
-        url: '/assets/projects/tienda_online.jpg',
-        description:
-          'This project is a Single Page Application and its objective is to sell souvenirs, this project is implemented with Reactjs and also implements a payment and location gateway through Google Maps',
-        tags: ['Reactjs', 'Javascript', 'Firebase', 'ChakraUi'],
-      },
-      {
-        id: 3,
-        title: 'Video Anime',
-        links: {
-          github: 'https://github.com/arielscc/videoAnime',
-          live: 'https://video-anime.netlify.app/',
-        },
-        url: '/assets/projects/video-anime.jpg',
-        description:
-          'This project is a site to watch anime videos and filter them by relevance, popularity, and rating. This website natively implements Server-Side Rendering and is a PWA',
-        tags: ['Javascript', 'Kitsu.io', 'Css', 'Html'],
-      },
-    ],
   },
   contact: {
     title: 'contact',

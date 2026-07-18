@@ -4,7 +4,6 @@ const es = {
       'inicio',
       'habilidades',
       'educación',
-      'proyectos',
       'contacto',
     ],
     icons: ['github', 'twitter', 'linkedin', 'idiomas', 'darkmode'],
@@ -13,9 +12,9 @@ const es = {
   hero: {
     title: 'inicio',
     greet: 'Hola, mi nombre es',
-    prof: 'Software Engineer',
+    prof: 'Mobile & Full Stack Engineer',
     button: 'Descargar CV',
-    description: 'Ingeniero con más de tres años de experiencia en desarrollo de productos, especializado en JavaScript, TypeScript y NodeJS. Mi enfoque es ofrecer soluciones de alta calidad en rendimiento, accesibilidad y buenas prácticas.',
+    description: 'Desarrollador de software con más de 7 años de experiencia, especializado en aplicaciones móviles multiplataforma para iOS y Android con React Native, complementado con frontend (React, Next.js, TypeScript) y backend (Node.js, Ruby on Rails). Con historial en salud digital: plataformas construidas desde cero, publicadas en App Store y Google Play.',
   },
   education: {
     title: 'educación',
@@ -31,94 +30,55 @@ const es = {
   },
   skills: {
     title: 'habilidades',
-    desc: 'En mis tiempos libres pude capacitarme en diferentes tecnologías, algunas de ellas son.',
+    desc: 'Tecnologías con las que trabajo a diario para construir productos móviles y web de principio a fin:',
     tabs: ['lenguajes', 'librerías', 'herramientas', 'diseño'],
   },
   experience: {
     title: 'experiencia',
     content: [
       {
-        title: 'Mobile Engineer / Full Stack',
-        company: 'Enara Health',
-        date: 'Ago/2021 - Actualidad (2 años)',
-        description: 'Actualmente soy miembro del equipo de desarrollo de aplicaciones móviles, pero también he contribuido en varios proyectos con diversos lenguajes y tecnologías. Algunas de mis responsabilidades incluyen:',
-        country: 'California, USA',
+        title: 'Senior FullStack Software Engineer',
+        company: 'Salud Intercultural',
+        date: 'Oct/2023 - Actualidad',
+        description: 'Lidero el desarrollo de plataformas clínicas y aplicaciones móviles para el sector salud, desde el diseño hasta el despliegue. Algunas de mis responsabilidades incluyen:',
+        country: 'La Paz, BO',
         roles: [
-          'Desarrollador de aplicaciones móviles multiplataforma para Android/iOS (React Native).',
-          'Desarrollador de aplicaciones web (React) - implementación de funciones y mantenimiento de interfaces de usuario.',
-          'Desarrollador de Microservicios (Node.js) - Arquitectura Escalable.',
-          'Desarrollador en proyectos Ruby on Rails - adición de funciones específicas.',
-          'Desarrollo de módulos nativos para Android.'
+          'App móvil para iOS y Android con React Native y Firebase, orientada al seguimiento de pacientes y la comunicación con el personal médico.',
+          'Diseño y desarrollo end-to-end de SIGECO, plataforma clínica y administrativa con Next.js, React, TypeScript, PostgreSQL y Prisma.',
+          'Flujos clínicos trazables y control de acceso por roles: derivaciones, historial de estados, diagnósticos, recetas, órdenes de análisis y resultados.',
+          'Sistema transaccional de ventas, cobros e inventario con saldos, descuentos, múltiples formas de pago y movimientos de caja automáticos.',
+          'Sitio institucional y CMS con Payload CMS, SEO, analítica y despliegue en Vercel, con pruebas unitarias e integración en Vitest.',
         ],
 
       },
       {
-        title: 'Frontend Developer / Tech Support',
-        company: 'Facultad de Ciencias Puras y Naturales',
-        date: 'Ene/2018 - Dic/2019 (2 años)',
-        country: 'La Paz, BO',
+        title: 'Frontend / Mobile Engineer (SemiSenior)',
+        company: 'Enara Health',
+        date: 'Jul/2021 - Ago/2023',
+        description: 'Formé parte del equipo que construyó una plataforma de salud digital para iOS y Android. Algunas de mis responsabilidades incluyen:',
+        country: 'California, USA (Remoto)',
         roles: [
-          'Responsable del soporte de los sistemas de administración de la facultad',
-          'Encargado de soporte de redes y comunicación de la facultad',
-          'Diseño de interfaces de usuario y Diseño gráfico',
-          'Administración de base de datos',
+          'Desarrollo end-to-end de una plataforma de salud para iOS y Android con React Native: chat en tiempo real, videollamadas, notificaciones push y seguimiento clínico.',
+          'Arquitectura frontend móvil y componentes reutilizables, optimizando rendimiento y consistencia visual entre dispositivos y sistemas operativos.',
+          'Módulos nativos en Android para funcionalidades del dispositivo no disponibles en las APIs estándar de React Native.',
+          'Servicios con Node.js y Ruby on Rails para gestión de información clínica, sincronización de datos y comunicación con la plataforma.',
+          'Integración con APIs de terceros, apps de salud y aseguradoras para habilitar seguimiento clínico e intercambio de información.',
+          'Pruebas automatizadas con Jest, Detox y Maestro, y pipelines CI/CD para distribución continua en App Store y Google Play.',
         ],
+
       },
       {
-        title: 'Encargado de sistemas',
-        company: 'Federación de Asociaciones Municipales de Bolivia',
-        date: 'Ene/2017 - Dic/2017 (1 año)',
+        title: 'Desarrollador de Software',
+        company: 'TIC Facultativo UMSA / FCPN-TIC',
+        date: '2018 - 2019',
         country: 'La Paz, BO',
         roles: [
-          'Encargado del soporte de sistemas de administración y gestión de recursos y correspondencia',
-          'Encargado del soporte de redes e infraestructura de la organización',
+          'Desarrollo de nuevas funcionalidades e interfaces de usuario para productos institucionales de la universidad.',
+          'Administración de bases de datos y generación de reportes para distintas unidades académicas.',
         ],
       },
 
     ]
-  },
-  list_projects: {
-    title: 'proyectos',
-    type: 'proyecto destacado',
-    show_more: 'Ver más',
-    projects: [
-      {
-        id: 1,
-        title: 'Exchange BTC',
-        links: {
-          github: 'https://github.com/arielscc/intercambio-btc',
-          live: 'https://intercambio-btc.netlify.app/',
-        },
-        url: '/assets/projects/intercambio-btc.jpg',
-        description:
-          'Este proyecto es una Single Page App, desarrollada en Vuejs v2 Con el objetivo de ver el valor de las criptomonedas, buscar mejores intercambios y presenta un gráfico del estado actual de cada criptomoneda.',
-        tags: ['VueJs', 'Javascript', 'TailwindCss'],
-      },
-      {
-        id: 2,
-        title: 'Tienda Online',
-        links: {
-          github: 'https://github.com/arielscc/TiendaOnline',
-          live: 'https://tiendaenlinea-6d2f5.firebaseapp.com/',
-        },
-        url: '/assets/projects/tienda_online.jpg',
-        description:
-          'Este proyecto es una Single Page App y tiene como objetivo la venta de souvenirs, este proyecto está implementado con Reactjs y también implementa una pasarela de pagos y localización vía Google Maps',
-        tags: ['Reactjs', 'Javascript', 'Firebase', 'ChakraUi'],
-      },
-      {
-        id: 3,
-        title: 'Video Anime',
-        links: {
-          github: 'https://github.com/arielscc/videoAnime',
-          live: 'https://video-anime.netlify.app/',
-        },
-        url: '/assets/projects/video-anime.jpg',
-        description:
-          'Este proyecto es un sitio para ver videos de anime, filtrarlos por relevancia, popularidad y calificación. Este sitio web implementa de forma nativa Server-Side-Rendering, y es una PWA',
-        tags: ['Javascript', 'Kitsu.io', 'Css', 'Html'],
-      },
-    ],
   },
   contact: {
     title: 'contacto',

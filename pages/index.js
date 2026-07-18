@@ -9,7 +9,6 @@ import Education from '../sections/Education';
 import Footer from '../sections/Footer';
 import Header from '../sections/Header';
 import Hero from '../sections/Hero';
-import Projects from '../sections/Projects';
 import Skills from '../sections/Skills';
 
 import en from '../i18n/en';
@@ -76,7 +75,6 @@ export default function Home() {
         <Hero referencie={ref} />
         <Skills />
         <Education />
-        <Projects />
         <Contact />
         <Footer />
       </Box>

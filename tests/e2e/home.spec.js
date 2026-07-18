@@ -5,7 +5,7 @@ test.describe('home page', () => {
     await page.goto('/es');
 
     await expect(page.getByRole('heading', { name: 'Ariel Chura' })).toBeVisible();
-    await expect(page.getByText('Software Engineer').first()).toBeVisible();
+    await expect(page.getByText('Mobile & Full Stack Engineer').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Descargar CV' })).toBeVisible();
     await expect(page.getByRole('heading', { name: /02\.\s*habilidades/i })).toBeVisible();
   });
@@ -16,7 +16,7 @@ test.describe('home page', () => {
     await expect(page.getByRole('button', { name: 'download resume' })).toBeVisible();
     await expect(page.getByRole('heading', { name: /02\.\s*skills/i })).toBeVisible();
     await expect(page.getByRole('heading', { name: /03\.\s*education/i })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /04\.\s*projects/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /04\.\s*contact/i })).toBeVisible();
   });
 
   test('exposes primary links', async ({ page }) => {
@@ -30,11 +30,9 @@ test.describe('home page', () => {
     await expect(page.getByRole('link', { name: 'Mensaje' })).toHaveAttribute('href', 'mailto:ariel.chura.c@gmail.com');
   });
 
-  test('renders projects and certifications', async ({ page }) => {
+  test('renders certifications', async ({ page }) => {
     await page.goto('/es');
 
-    await expect(page.getByRole('heading', { name: 'Exchange BTC' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Platzi Badges' })).toBeVisible();
     await expect(page.getByRole('button', { name: /Open certificate: Chatbot/i })).toBeVisible();
     await page.getByRole('tab', { name: 'Platzi' }).click();
     await expect(page.getByRole('link', { name: 'Curso Básico de JavaScript' })).toBeVisible();

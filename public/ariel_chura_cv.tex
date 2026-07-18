@@ -1,0 +1,172 @@
+%-------------------------------------------------------------------%
+% Ariel Socrates Chura Choque — CV ATS-Optimizado
+%-------------------------------------------------------------------%
+% Diseño: una sola columna (ATS-safe), tipografía Charter,
+% sin íconos ni gráficos, orden de lectura lineal.
+% Basado en principios de "Jake's Resume" (plantilla ATS de referencia
+% en la industria tech) con acentos elegantes.
+% Compilar con pdflatex.
+%-------------------------------------------------------------------%
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english,spanish]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{charter}          % Fuente serif elegante y ATS-safe
+
+% --- Colores (sobrios y formales) ---
+\definecolor{primary}{HTML}{1a3c5e}    % azul marino profundo
+\definecolor{ruleline}{HTML}{8c9bab}   % gris azulado para líneas
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0pt}
+
+% --- Márgenes ---
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+% --- Legibilidad ATS: mapa de glifos a Unicode ---
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% --- Formato de secciones ---
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries\color{primary}
+}{}{0em}{}[\color{ruleline}\titlerule\vspace{-4pt}]
+
+% --- Comandos personalizados ---
+\newcommand{\resumeItem}[1]{
+  \item\small{#1\vspace{-1pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\color{primary}#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, parsep=1pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+%-------------------------------------------------------------------%
+\begin{document}
+
+%----------- ENCABEZADO -----------
+\begin{center}
+    {\Huge \scshape \color{primary} Ariel Socrates Chura Choque} \\ \vspace{4pt}
+    {\large Desarrollador de Software \,$|$\, Mobile Engineer \,$|$\, React Native (iOS \& Android)} \\ \vspace{5pt}
+    \small
+    La Paz, Bolivia \,$|$\, Disponible para trabajo remoto \\ \vspace{2pt}
+    +591 77557034 \,$|$\,
+    \href{mailto:ariel.chura.c@gmail.com}{ariel.chura.c@gmail.com} \,$|$\,
+    \href{https://www.linkedin.com/in/arielchura}{linkedin.com/in/arielchura} \,$|$\,
+    \href{https://github.com/arielscc}{github.com/arielscc} \,$|$\,
+    \href{https://arielchura.com}{arielchura.com}
+\end{center}
+
+%----------- RESUMEN -----------
+\section{Resumen Profesional}
+\small{
+Desarrollador de software con \textbf{más de 7 años de experiencia profesional}, especializado en el desarrollo de \textbf{aplicaciones móviles multiplataforma para iOS y Android con React Native}. Historial comprobado en salud digital: construcción de plataformas desde cero con chat en tiempo real, videollamadas, notificaciones push, módulos nativos e integraciones con servicios de terceros, publicadas en App Store y Google Play. Complementado con experiencia sólida en frontend (React, Next.js, TypeScript) y backend (Node.js, Ruby on Rails). Disponible para trabajo remoto internacional o en Bolivia.
+}
+
+%----------- COMPETENCIAS -----------
+\section{Competencias Técnicas}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
+    \small{
+    \item \textbf{Desarrollo Móvil:} React Native, iOS, Android, Módulos Nativos (Android), Detox, Maestro, Flipper, Reactotron
+    \item \textbf{Frontend:} React, Next.js, TypeScript, JavaScript, HTML, CSS, ChakraUI, TailwindCSS, React Query
+    \item \textbf{Backend:} Node.js, NestJS, Express, Ruby on Rails, Laravel, PHP, GraphQL, MySQL, SQL
+    \item \textbf{Cloud y DevOps:} Google Cloud Platform (GCP), AWS, Docker, CI/CD, Firebase
+    \item \textbf{Testing y Calidad:} Jest, Cypress, Detox, Maestro, QA automatizado y manual
+    \item \textbf{Herramientas:} Git, GitHub, Bitbucket, VSCode, Postman, Sourcetree, Datadog, Mixpanel, Figma
+    }
+\end{itemize}
+
+%----------- EXPERIENCIA -----------
+\section{Experiencia Profesional}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Salud Intercultural}{Oct 2023 -- Actualidad}
+    {Senior FullStack Software Engineer}{La Paz, Bolivia}
+    \resumeItemListStart
+      \resumeItem{Desarrollo de aplicación móvil para \textbf{iOS y Android} con \textbf{React Native y Firebase}, orientada al seguimiento de pacientes y la
+      comunicación con el personal médico, reduciendo consultas presenciales innecesarias.}
+      \resumeItem{Diseño y desarrollo end-to-end de \textbf{SIGECO}, plataforma clínica y administrativa responsive con \textbf{Next.js React, TypeScript,
+      PostgreSQL y Prisma}, integrando recepción, consultas, enfermería, estudios, seguimiento y fichas longitudinales de pacientes.}
+      \resumeItem{Implementación de flujos clínicos trazables y control de acceso  para \textbf{roles operativos}, incluyendo derivaciones entre áreas,
+      historial de estados, diagnósticos, recetas, órdenes de análisis y retorno de resultados al médico.}
+      \resumeItem{Desarrollo del sistema transaccional de \textbf{ventas, cobros e inventario}, con saldos, descuentos, múltiples formas de pago, órdenes de cobro por
+      estudios, movimientos de caja automático ante stock insuficiente.}
+      \resumeItem{Construcción del sitio institucional y CMS con \textbf{Payload CMS}, gestión editorial, SEO, analítica y despliegue en \textbf{Vercel}; diseño mobile-
+      first accesible \textbf{pruebas unitarias y de integración} con Vitest.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Enara Health}{Jul 2021 -- Ago 2023}
+    {Frontend / Mobile Engineer (SemiSenior)}{California, EE.UU. (Remoto)}
+    \resumeItemListStart
+      \resumeItem{Desarrollo end-to-end de una plataforma de salud digital para \textbf{iOS y Android} con \textbf{React Native}, incorporando chat en tiempo real,
+      videollamadas, notificaciones push, evaluación alimentaria y visualización del progreso clínico de pacientes.}
+      \resumeItem{Diseño de la arquitectura frontend móvil y construcción de componentes reutilizables, optimizando rendimiento, mantenibilidad y consistencia visual
+      entre dispositivos y sistemas operativos.}
+      \resumeItem{Implementación de \textbf{módulos nativos en Android} para integrar funcionalidades del dispositivo no disponibles mediante las APIs estándar de React
+      Native.}
+      \resumeItem{Desarrollo e integración de servicios con \textbf{Node.js y Ruby on Rails} para gestionar información clínica, sincronización de datos y comunicación
+      entre la aplicación móvil y los sistemas de la plataforma.}
+      \resumeItem{Integración con APIs de terceros, aplicaciones de salud y aseguradoras, habilitando seguimiento clínico, intercambio de información y
+      nuevas fuentes de datos para pacientes y profesionales.}
+      \resumeItem{Implementación de pruebas automatizadas con \textbf{Jest, Detox y Maestro}, además de pipelines \textbf{CI/CD} para distribución continua en
+      \textbf{App Store y Google Play}.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {TIC Facultativo UMSA / FCPN-TIC}{2018 -- 2019}
+    {Desarrollador de Software}{La Paz, Bolivia}
+    \resumeItemListStart
+      \resumeItem{Desarrollo de nuevas funcionalidades e interfaces de usuario para productos institucionales de la universidad.}
+      \resumeItem{Administración de bases de datos y generación de reportes para distintas unidades académicas.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- EDUCACIÓN -----------
+\section{Educación}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Universidad Mayor de San Andrés (UMSA)}{2020}
+    {Licenciatura en Informática — Mención: Ingeniería de Sistemas Informáticos}{La Paz, Bolivia}
+\resumeSubHeadingListEnd
+
+%----------- IDIOMAS -----------
+\section{Idiomas}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt]
+    \small{
+    \item \textbf{Español:} Nativo \quad$|$\quad \textbf{Inglés:} Intermedio (B1), en progreso
+    }
+\end{itemize}
+
+\end{document}
